@@ -1,0 +1,26 @@
+package me.hberumen.nomina.modelo;
+
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.math.BigDecimal;
+
+/**
+ * Created by hberumen on 30/11/16.
+ */
+@XmlRootElement(name="SubsidioAlEmpleo")
+public class SubsidioAlEmpleo {
+
+    private BigDecimal  subsidioCausado;
+
+    public SubsidioAlEmpleo() {
+    }
+
+    @XmlAttribute
+    public BigDecimal getSubsidioCausado() {
+        return subsidioCausado;
+    }
+
+    public void setSubsidioCausado(BigDecimal subsidioCausado) {
+        this.subsidioCausado = subsidioCausado;
+    }
+}

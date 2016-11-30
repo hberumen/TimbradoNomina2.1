@@ -31,12 +31,22 @@ public class Nomina {
     private EntidadSNFC entidadSNFC;
     private Receptor receptor;
     private SubContratacion subContratacion;
+    private Percepciones percepciones;
+    private AccionesOTitulos accionesOTitulos;
+    private HorasExtra horasExtra;
+    private JubilacionPensionRetiro jubilacionPensionRetiro;
+    private SeparacionIndemnizacion separacionIndemnizacion;
+    private Deducciones deducciones;
+    private Incapacidades incapacidades;
+    private OtrosPagos otrosPagos;
+    private SubsidioAlEmpleo subsidioAlEmpleo;
+    private CompensacionSaldosAFavor compensacionSaldosAFavor;
 
     public Nomina() {
         emisor = new Emisor();
-        entidadSNFC = new EntidadSNFC();
         receptor = new Receptor();
-        subContratacion = new SubContratacion();
+        percepciones = new Percepciones();
+        deducciones = new Deducciones();
     }
 
     @XmlAttribute
@@ -135,5 +145,93 @@ public class Nomina {
 
     public void setReceptor(Receptor receptor) {
         this.receptor = receptor;
+    }
+
+    public SubContratacion getSubContratacion() {
+        return subContratacion;
+    }
+
+    public void setSubContratacion(SubContratacion subContratacion) {
+        this.subContratacion = subContratacion;
+    }
+
+    public Percepciones getPercepciones() {
+        return percepciones;
+    }
+
+    public void setPercepciones(Percepciones percepciones) {
+        this.percepciones = percepciones;
+    }
+
+    public AccionesOTitulos getAccionesOTitulos() {
+        return accionesOTitulos;
+    }
+
+    public void setAccionesOTitulos(AccionesOTitulos accionesOTitulos) {
+        this.accionesOTitulos = accionesOTitulos;
+    }
+
+    public HorasExtra getHorasExtra() {
+        return horasExtra;
+    }
+
+    public void setHorasExtra(HorasExtra horasExtra) {
+        this.horasExtra = horasExtra;
+    }
+
+    public JubilacionPensionRetiro getJubilacionPensionRetiro() {
+        return jubilacionPensionRetiro;
+    }
+
+    public void setJubilacionPensionRetiro(JubilacionPensionRetiro jubilacionPensionRetiro) {
+        this.jubilacionPensionRetiro = jubilacionPensionRetiro;
+    }
+
+    public SeparacionIndemnizacion getSeparacionIndemnizacion() {
+        return separacionIndemnizacion;
+    }
+
+    public void setSeparacionIndemnizacion(SeparacionIndemnizacion separacionIndemnizacion) {
+        this.separacionIndemnizacion = separacionIndemnizacion;
+    }
+
+    public Deducciones getDeducciones() {
+        return deducciones;
+    }
+
+    public void setDeducciones(Deducciones deducciones) {
+        this.deducciones = deducciones;
+    }
+
+    public Incapacidades getIncapacidades() {
+        return incapacidades;
+    }
+
+    public void setIncapacidades(Incapacidades incapacidades) {
+        this.incapacidades = incapacidades;
+    }
+
+    public OtrosPagos getOtrosPagos() {
+        return otrosPagos;
+    }
+
+    public void setOtrosPagos(OtrosPagos otrosPagos) {
+        this.otrosPagos = otrosPagos;
+    }
+
+    public SubsidioAlEmpleo getSubsidioAlEmpleo() {
+        return subsidioAlEmpleo;
+    }
+
+    public void setSubsidioAlEmpleo(SubsidioAlEmpleo subsidioAlEmpleo) {
+        this.subsidioAlEmpleo = subsidioAlEmpleo;
+    }
+
+    public CompensacionSaldosAFavor getCompensacionSaldosAFavor() {
+        return compensacionSaldosAFavor;
+    }
+
+    public void setCompensacionSaldosAFavor(CompensacionSaldosAFavor compensacionSaldosAFavor) {
+        this.compensacionSaldosAFavor = compensacionSaldosAFavor;
     }
 }
