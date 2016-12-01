@@ -18,9 +18,9 @@ public class Emisor {
     private String curp;
     private String registroPatronal;
     private String rfcPatronOrigen;
-    private String antigüedad;
+    private String antiguedad;
     private String tipoContrato;
-    private int sindicalizado;
+    private Integer sindicalizado;
     private String tipoJornada;
     private String tipoRegimen;
     private String numEmpleado;
@@ -85,12 +85,12 @@ public class Emisor {
     }
 
     @XmlAttribute
-    public String getAntigüedad() {
-        return antigüedad;
+    public String getAntiguedad() {
+        return antiguedad;
     }
 
-    public void setAntigüedad(String antigüedad) {
-        this.antigüedad = antigüedad;
+    public void setAntiguedad(String antiguedad) {
+        this.antiguedad = antiguedad;
     }
 
     @XmlAttribute
@@ -103,11 +103,11 @@ public class Emisor {
     }
 
     @XmlAttribute
-    public int getSindicalizado() {
+    public Integer getSindicalizado() {
         return sindicalizado;
     }
 
-    public void setSindicalizado(int sindicalizado) {
+    public void setSindicalizado(Integer sindicalizado) {
         this.sindicalizado = sindicalizado;
     }
 

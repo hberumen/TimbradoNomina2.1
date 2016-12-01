@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @XmlRootElement(name="Incapacidad")
 public class Incapacidad {
 
-    private int diasIncapacidad;
+    private Integer diasIncapacidad;
     private String tipoIncapacidad;
     private BigDecimal importeMonetario;
 
@@ -19,11 +19,11 @@ public class Incapacidad {
     }
 
     @XmlAttribute
-    public int getDiasIncapacidad() {
+    public Integer getDiasIncapacidad() {
         return diasIncapacidad;
     }
 
-    public void setDiasIncapacidad(int diasIncapacidad) {
+    public void setDiasIncapacidad(Integer diasIncapacidad) {
         this.diasIncapacidad = diasIncapacidad;
     }
 

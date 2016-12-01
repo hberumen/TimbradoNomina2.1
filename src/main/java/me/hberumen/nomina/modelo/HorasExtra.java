@@ -10,9 +10,9 @@ import java.math.BigDecimal;
 @XmlRootElement(name="HorasExtra")
 public class HorasExtra {
 
-    private int dias;
+    private Integer dias;
     private String tipoHoras;
-    private int horasExtra;
+    private Integer horasExtra;
     private BigDecimal importePagado;
 
 
@@ -20,11 +20,11 @@ public class HorasExtra {
     }
 
     @XmlAttribute
-    public int getDias() {
+    public Integer getDias() {
         return dias;
     }
 
-    public void setDias(int dias) {
+    public void setDias(Integer dias) {
         this.dias = dias;
     }
 
@@ -38,11 +38,11 @@ public class HorasExtra {
     }
 
     @XmlAttribute
-    public int getHorasExtra() {
+    public Integer getHorasExtra() {
         return horasExtra;
     }
 
-    public void setHorasExtra(int horasExtra) {
+    public void setHorasExtra(Integer horasExtra) {
         this.horasExtra = horasExtra;
     }
 

@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class CompensacionSaldosAFavor {
 
     private BigDecimal saldoAFavor;
-    private int año;
+    private Integer ano;
     private BigDecimal RemanenteSalFav;
 
     public CompensacionSaldosAFavor() {
@@ -27,12 +27,12 @@ public class CompensacionSaldosAFavor {
     }
 
     @XmlAttribute
-    public int getAño() {
-        return año;
+    public Integer getAno() {
+        return ano;
     }
 
-    public void setAño(int año) {
-        this.año = año;
+    public void setAno(Integer ano) {
+        this.ano = ano;
     }
 
     @XmlAttribute

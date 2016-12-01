@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class SeparacionIndemnizacion {
 
     private BigDecimal totalPagado;
-    private int numAñosServicios;
+    private Integer numAnosServicios;
     private BigDecimal ultimoSueldoMensOrd;
     private BigDecimal ingresoAcomulado;
     private BigDecimal ingresoNoAcomulado;
@@ -29,12 +29,12 @@ public class SeparacionIndemnizacion {
     }
 
     @XmlAttribute
-    public int getNumAñosServicios() {
-        return numAñosServicios;
+    public Integer getNumAnosServicios() {
+        return numAnosServicios;
     }
 
-    public void setNumAñosServicios(int numAñosServicios) {
-        this.numAñosServicios = numAñosServicios;
+    public void setNumAnosServicios(Integer numAnosServicios) {
+        this.numAnosServicios = numAnosServicios;
     }
 
     @XmlAttribute

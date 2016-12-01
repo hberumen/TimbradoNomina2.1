@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 @XmlRootElement(name = "Concepto")
 public class Concepto {
 
-    private int cantidad;
+    private Integer cantidad;
     private String unidad;
     private String descripcion;
     private BigDecimal valorUnitario;
@@ -20,11 +20,11 @@ public class Concepto {
     }
 
     @XmlAttribute
-    public int getCantidad() {
+    public Integer getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(int cantidad) {
+    public void setCantidad(Integer cantidad) {
         this.cantidad = cantidad;
     }
 
