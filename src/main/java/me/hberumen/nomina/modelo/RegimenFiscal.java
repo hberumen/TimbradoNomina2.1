@@ -23,4 +23,5 @@ public class RegimenFiscal {
     public void setRegimen(String regimen) {
         this.regimen = regimen;
     }
+
 }

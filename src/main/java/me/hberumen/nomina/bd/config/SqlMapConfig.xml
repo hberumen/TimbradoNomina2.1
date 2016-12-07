@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="localCacheScope" value="STATEMENT"/>
+	</settings> 
+	<typeAliases>
+
+
+		<typeAlias type="me.hberumen.nomina.modelo.Comprobante" alias="Comprobante" />
+		<typeAlias type="me.hberumen.nomina.modelo.AccionesOTitulos" alias="AccionesOTitulos" />
+		<typeAlias type="me.hberumen.nomina.modelo.CompensacionSaldosAFavor" alias="CompensacionSaldosAFavor" />
+		<typeAlias type="me.hberumen.nomina.modelo.Concepto" alias="Concepto" />
+		<typeAlias type="me.hberumen.nomina.modelo.Conceptos" alias="Conceptos" />
+		<typeAlias type="me.hberumen.nomina.modelo.Deduccion" alias="Deduccion" />
+		<typeAlias type="me.hberumen.nomina.modelo.Deducciones" alias="Deducciones" />
+		<typeAlias type="me.hberumen.nomina.modelo.Emisor" alias="Emisor" />
+		<typeAlias type="me.hberumen.nomina.modelo.EntidadSNFC" alias="EntidadSNFC" />
+		<typeAlias type="me.hberumen.nomina.modelo.HorasExtra" alias="HorasExtra" />
+		<typeAlias type="me.hberumen.nomina.modelo.Impuestos" alias="Impuestos" />
+		<typeAlias type="me.hberumen.nomina.modelo.Incapacidad" alias="Incapacidad" />
+		<typeAlias type="me.hberumen.nomina.modelo.JubilacionPensionRetiro" alias="JubilacionPensionRetiro" />
+		<typeAlias type="me.hberumen.nomina.modelo.Nomina" alias="Nomina" />
+		<typeAlias type="me.hberumen.nomina.modelo.OtroPago" alias="OtroPago" />
+		<typeAlias type="me.hberumen.nomina.modelo.Percepcion" alias="Percepcion" />
+		<typeAlias type="me.hberumen.nomina.modelo.Percepciones" alias="Percepciones" />
+		<typeAlias type="me.hberumen.nomina.modelo.Receptor" alias="Receptor" />
+		<typeAlias type="me.hberumen.nomina.modelo.RegimenFiscal" alias="RegimenFiscal" />
+		<typeAlias type="me.hberumen.nomina.modelo.SeparacionIndemnizacion" alias="SeparacionIndemnizacion" />
+		<typeAlias type="me.hberumen.nomina.modelo.SubContratacion" alias="SubContratacion" />
+		<typeAlias type="me.hberumen.nomina.modelo.SubsidioAlEmpleo" alias="SubsidioAlEmpleo" />
+		
+	</typeAliases>
+	<environments default="PRODUCCION">
+		<environment id="PRODUCCION">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="net.sourceforge.jtds.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/nomina;" />
+				<property name="username" value="root" />
+				<property name="password" value="" />
+				<property name="poolMaximumActiveConnections" value="1000" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="me/hberumen/nomina/bd/mappers/NominaMapper.xml" />
+	</mappers>
+</configuration>

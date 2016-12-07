@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -29,14 +30,15 @@ public class Nomina {
     private BigDecimal totalOtrosPagos;
 
     private Emisor emisor;
-    private EntidadSNFC entidadSNFC;
     private Receptor receptor;
+    private EntidadSNFC entidadSNFC;
     private SubContratacion subContratacion;
     private Percepciones percepciones;
     private AccionesOTitulos accionesOTitulos;
     private HorasExtra horasExtra;
     private JubilacionPensionRetiro jubilacionPensionRetiro;
     private SeparacionIndemnizacion separacionIndemnizacion;
+
     private Deducciones deducciones;
     private Incapacidades incapacidades;
     private OtrosPagos otrosPagos;
@@ -44,10 +46,7 @@ public class Nomina {
     private CompensacionSaldosAFavor compensacionSaldosAFavor;
 
     public Nomina() {
-        emisor = new Emisor();
-        receptor = new Receptor();
-        percepciones = new Percepciones();
-        deducciones = new Deducciones();
+
     }
 
     @XmlAttribute
