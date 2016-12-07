@@ -4,6 +4,6 @@
 
 <mapper namespace="me.hberumen.nomina.bd.mappers.NominaMapper">
 	
-
+    <select id=""></select>
 	
 </mapper>
