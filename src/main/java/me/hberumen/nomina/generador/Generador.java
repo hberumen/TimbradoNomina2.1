@@ -1,7 +1,6 @@
 package me.hberumen.nomina.generador;
 
 import me.hberumen.nomina.bd.mappers.NominaMapper;
-import me.hberumen.nomina.dao.*;
 import me.hberumen.nomina.modelo.*;
 
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
 public class Generador {
 
     private Comprobante comprobante;
-    private EmisorDao emisorDao;
+    private Emisor emisor;
     private Receptor receptor;
     private Complemento complemento;
     private Nomina nomina;
@@ -55,58 +54,52 @@ public class Generador {
     }
 
     private void setDeduccionesNomina() {
-        DeduccionesDao deduccionesDao = new DeduccionesDao(nomina.getIdNomina());
-        deduccionesDao = deduccionesDao.seleccionarDeduccionesPorIdNomina();
-        nomina.setDeducciones(deduccionesDao);
+        Deducciones deducciones = nominaMapper.seleccionarDeduccionesPorIdNomina(nomina.getIdNomina());
+        nomina.setDeducciones(deducciones);
 
-        DeduccionDao deduccionDao = new DeduccionDao(deduccionesDao.getIdDeducciones());
+        List<Deduccion> deduccion = nominaMapper.seleccionarDeduccionPorIdDeducciones(deducciones.getIdDeducciones());
+        deducciones.setDeduccion(deduccion);
 
     }
 
     private void setSeparacionIndemnizacionNomina() {
-        SeparacionIndemnizacionDao separacionIndemnizacionDao = new SeparacionIndemnizacionDao(nomina.getIdNomina());
-        SeparacionIndemnizacion separacionIndemnizacion = separacionIndemnizacionDao.seleccionarSeparacionIndemnizacionPorIdNomina();
+        SeparacionIndemnizacion separacionIndemnizacion = nominaMapper.seleccionarSeparacionIndemnizacionPorIdNomina(nomina.getIdNomina());
         nomina.setSeparacionIndemnizacion(separacionIndemnizacion);
     }
 
     private void setJubilacionPensionRetiroNomina() {
-        JubilacionPensionRetiroDao jubilacionPensionRetiroDao = new JubilacionPensionRetiroDao(nomina.getIdNomina());
-        JubilacionPensionRetiro jubilacionPensionRetiro = jubilacionPensionRetiroDao.seleccionarJubilacionPensionRetiroPorIdNomina();
+        JubilacionPensionRetiro jubilacionPensionRetiro = nominaMapper.seleccionarJubilacionPensionRetiroPorIdNomina(nomina.getIdNomina());
         nomina.setJubilacionPensionRetiro(jubilacionPensionRetiro);
     }
 
     private void setHorasExtraNomina() {
-        HorasExtraDao horasExtraDao = new HorasExtraDao(nomina.getIdComprobante());
-        HorasExtra horasExtra = new HorasExtra();
+        HorasExtra horasExtra = nominaMapper.seleccionarHorasExtraPorIdNomina(nomina.getIdNomina());
         nomina.setHorasExtra(horasExtra);
     }
 
     private void setAccionesOTitulosNomina() {
-        AccionesOTitulosDao accionesOTitulosDao = new AccionesOTitulosDao(nomina.getIdNomina());
-        AccionesOTitulos accionesOTitulos = accionesOTitulosDao.selecionarAccionesOTitulosPorIdNomina();
+        AccionesOTitulos accionesOTitulos = nominaMapper.selecionarAccionesOTitulosPorIdNomina(nomina.getIdNomina());
         nomina.setAccionesOTitulos(accionesOTitulos);
     }
 
     private void setPercepcionesNomina() {
-        PercepcionesDao percepcionesDao = new PercepcionesDao(nomina.getIdNomina());
-        nomina.setPercepciones(percepcionesDao);
+        Percepciones percepciones = nominaMapper.seleccionarPercepcionesPorIdNomina(nomina.getIdNomina());
+        nomina.setPercepciones(percepciones);
 
-        PercepcionDao percepcionDao = new PercepcionDao(percepcionesDao.getIdPercepciones());
-        List<Percepcion>  listPercepcion = percepcionDao.seleccionarPercepcionPorIdPercepciones();
+        List<Percepcion>  listPercepcion = nominaMapper.seleccionarPercepcionPorIdPercepciones(percepciones.getIdPercepciones());
 
-        percepcionesDao.setPercepcion(listPercepcion);
+        percepciones.setPercepcion(listPercepcion);
 
     }
 
     private void setSubContratacionNomina() {
-        SubContratacionDao subContratacionDao = new SubContratacionDao(nomina.getIdNomina());
-        SubContratacion subContratacion = subContratacionDao.seleccionarSubContratacionPorIdNomina();
+        SubContratacion subContratacion = nominaMapper.seleccionarSubContratacionPorIdNomina(nomina.getIdNomina());
         nomina.setSubContratacion(subContratacion);
 
     }
 
     private void setEntidadSNFCNomina() {
-        EntidadSNFCDao entidadSNFCDao = new EntidadSNFCDao(nomina.getIdNomina());
+        EntidadSNFC entidadSNFCDao = nominaMapper.seleccionarEntidadSNFCPorIdNomina(nomina.getIdNomina());
         nomina.setEntidadSNFC(entidadSNFCDao);
     }
 
@@ -126,7 +119,7 @@ public class Generador {
         Conceptos conceptos = new Conceptos();
         comprobante.setConceptos(conceptos);
 
-        ConceptoDao conceptoDao = new ConceptoDao(comprobante.getIdComprobante());
+        Concepto conceptoDao = new ConceptoDao(comprobante.getIdComprobante());
         Concepto concepto = conceptoDao.seleccionarConceptosPorIdComprobante();
         conceptos.setConcepto(concepto);
     }

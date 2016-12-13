@@ -22,7 +22,7 @@ public interface NominaMapper {
     public JubilacionPensionRetiro seleccionarJubilacionPensionRetiroPorIdNomina(BigInteger idNomina);
     public SeparacionIndemnizacion seleccionarSeparacionIndemnizacionPorIdNomina(BigInteger idNomina);
     public Deducciones seleccionarDeduccionesPorIdNomina(BigInteger idNomina);
-    public Deduccion seleccionarDeduccionPorIdDeducciones(BigInteger idDeducciones);
+    public List<Deduccion> seleccionarDeduccionPorIdDeducciones(BigInteger idDeducciones);
     public Incapacidad seleccionarIncapacidadPorIdNomina(BigInteger idNomina);
     public OtroPago seleccionarOtroPagoPorIdNomina(BigInteger idNomina);
     public SubsidioAlEmpleo seleccionarSubsidioPorIdNomina(BigInteger idNomina);

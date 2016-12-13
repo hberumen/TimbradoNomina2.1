@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="60331dd8-07a3-4af6-b703-17fa354bc4db" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java" />
     </list>
     <ignored path="TimbradoNomina.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,21 +59,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Nomina.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java">
+      <file leaf-file-name="Generador.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NominaMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="70" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="70" />
+            <state relative-caret-position="260">
+              <caret line="127" column="36" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,38 +71,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NominaMapper.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml">
+      <file leaf-file-name="NominaMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="285">
+              <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
               <folding>
-                <marker date="1481657677000" expanded="true" signature="326:693" ph="SELECT versi... comprobante" />
-                <marker date="1481657677000" expanded="true" signature="810:1094" ph="SELECT idNom... nomina" />
-                <marker date="1481657677000" expanded="true" signature="1172:1310" ph="SELECT idEmi... emisor" />
-                <marker date="1481657677000" expanded="true" signature="1431:1561" ph="SELECT idReg... regimen_fiscal" />
-                <marker date="1481657677000" expanded="true" signature="1683:2125" ph="SELECT idRec... receptor" />
-                <marker date="1481657677000" expanded="true" signature="2253:2439" ph="SELECT idCon... concepto" />
-                <marker date="1481657677000" expanded="true" signature="2565:2713" ph="SELECT idEnt... entidad_snfc" />
-                <marker date="1481657677000" expanded="true" signature="2849:3008" ph="SELECT idSub... subcontratacion" />
-                <marker date="1481657677000" expanded="true" signature="3138:3373" ph="SELECT idPer... percepciones" />
-                <marker date="1481657677000" expanded="true" signature="3505:3707" ph="SELECT idPer... percepcion" />
-                <marker date="1481657677000" expanded="true" signature="3844:4003" ph="SELECT idAcc... acciones_o_titulos" />
-                <marker date="1481657677000" expanded="true" signature="4129:4294" ph="SELECT idHor... horas_extra" />
-                <marker date="1481657677000" expanded="true" signature="4446:4682" ph="SELECT idJub... jubilacion_pension_retiro" />
-                <marker date="1481657677000" expanded="true" signature="4834:5068" ph="SELECT idSep... separacion_indemnizacion" />
-                <marker date="1481657677000" expanded="true" signature="5196:5333" ph="SELECT idDed... deducciones" />
-                <marker date="1481657677000" expanded="true" signature="5196:5366" ph="SELECT idDed... deducciones" />
-                <marker date="1481657677000" expanded="true" signature="5495:5626" ph="SELECT FROM WHERE" />
-                <marker date="1481657677000" expanded="true" signature="5495:5669" ph="SELECT idDed... deduccion" />
-                <marker date="1481657677000" expanded="true" signature="5797:5938" ph="SELECT FROM WHERE" />
-                <marker date="1481657677000" expanded="true" signature="5797:5971" ph="SELECT idInc... incapacidad" />
-                <marker date="1481657677000" expanded="true" signature="6093:6217" ph="SELECT FROM WHERE" />
-                <marker date="1481657677000" expanded="true" signature="6093:6250" ph="SELECT idOtr... otro_pago" />
-                <marker date="1481657677000" expanded="true" signature="6380:6490" ph="SELECT FROM WHERE" />
-                <marker date="1481657677000" expanded="true" signature="6380:6523" ph="SELECT idSub... subsidio_al_empleo" />
-                <marker date="1481657677000" expanded="true" signature="6665:6806" ph="SELECT FROM WHERE" />
-                <marker date="1481657677000" expanded="true" signature="6665:6839" ph="SELECT idCom... compensacion_saldos_a_favor" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -170,7 +136,6 @@
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/DeduccionesDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/DeduccionDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/HorasExtraDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Emisor.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/RegimenFiscal.java" />
@@ -190,10 +155,11 @@
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Incapacidad.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/OtroPago.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/SubsidioAlEmpleo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/CompensacionSaldosAFavor.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mybatis/ImplNominaMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java" />
       </list>
     </option>
   </component>
@@ -211,10 +177,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1440" />
-    <option name="y" value="24" />
-    <option name="width" value="1920" />
-    <option name="height" value="1002" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -301,6 +266,10 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -325,10 +294,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="nomina" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modelo" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -423,44 +388,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mappers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TimbradoNomina" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TimbradoNomina" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nomina" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="bd" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -979,7 +906,7 @@
       <workItem from="1481125625741" duration="623000" />
       <workItem from="1481131891454" duration="1128000" />
       <workItem from="1481133401431" duration="3881000" />
-      <workItem from="1481568272608" duration="10012000" />
+      <workItem from="1481568272608" duration="12786000" />
     </task>
     <task id="LOCAL-00001" summary="Agregar data objects para utilizarlos con orm de bd.">
       <created>1481126051196</created>
@@ -999,11 +926,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53626000" />
+    <option name="totallyTimeSpent" value="56400000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="24" width="1920" height="1002" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1016,11 +943,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33013698" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="IvyIDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2824176" sideWeight="0.49574015" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32738853" sideWeight="0.49574015" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18423855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24749643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4427754" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1102,16 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="32" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1594,14 +1511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/HorasExtra.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1610,20 +1519,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="70" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <marker date="1481657677000" expanded="true" signature="326:693" ph="SELECT versi... comprobante" />
             <marker date="1481657677000" expanded="true" signature="810:1094" ph="SELECT idNom... nomina" />
@@ -1651,6 +1550,34 @@
             <marker date="1481657677000" expanded="true" signature="6380:6523" ph="SELECT idSub... subsidio_al_empleo" />
             <marker date="1481657677000" expanded="true" signature="6665:6806" ph="SELECT FROM WHERE" />
             <marker date="1481657677000" expanded="true" signature="6665:6839" ph="SELECT idCom... compensacion_saldos_a_favor" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-270">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="28" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="127" column="36" selection-start-line="127" selection-start-column="36" selection-end-line="127" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
