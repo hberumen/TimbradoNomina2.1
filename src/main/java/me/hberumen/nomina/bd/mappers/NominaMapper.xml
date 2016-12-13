@@ -74,6 +74,124 @@
         idNomina = #{idNomina}
     </select>
 
+    <select id="seleccionarSubContratacionPorIdNomina" parameterType="BigInteger" resultType="SubContratacion">
+        SELECT
+          idSubcontratacion, idNomina, rfcLabora, porcentajeTiempo
+        FROM
+          subcontratacion
+        WHERE
+          idNomina = #{idNomina}
+    </select>
 
+    <select id="seleccionarPercepcionesPorIdNomina" parameterType="BigInteger" resultType="Percepciones">
+        SELECT
+          idPercepciones, idNomina, totalSueldos, totalSeparacionIndemnizacion, totalJubilacionPensionRetiro,
+          totalGravado, totalExento
+        FROM
+          percepciones
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarPercepcionPorIdPercepciones" parameterType="BigInteger" resultType="Percepcion">
+        SELECT
+          idPercepcion, idPercepciones, tipoPercepcion, clave, concepto, importeGravado, importeExento
+        FROM
+          percepcion
+        WHERE
+          idPercepciones = #{idPercepciones}
+    </select>
+
+    <select id="selecionarAccionesOTitulosPorIdNomina" parameterType="BigInteger" resultType="AccionesOTitulos">
+        SELECT
+          idAcciones, idNomina, valorMercado, precioAlOtorgarse
+        FROM
+          acciones_o_titulos
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarHorasExtraPorIdNomina" parameterType="BigInteger" resultType="HorasExtra">
+        SELECT
+          idHorasExtra, idNomina, dias, tipoHoras, horasExtra, importePagado
+        FROM
+          horas_extra
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarJubilacionPensionRetiroPorIdNomina" parameterType="BigInteger" resultType="JubilacionPensionRetiro">
+        SELECT
+          idJubilacion, idNomina, totalUnaExhibicion, totalParcialidad, montoDiario,
+          ingresoAcomulable, ingresoNoAcomulable
+        FROM
+          jubilacion_pension_retiro
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarSeparacionIndemnizacionPorIdNomina" parameterType="BigInteger" resultType="SeparacionIndemnizacion">
+        SELECT
+          idSeparacion, idNomina, totalPagado, numAnosServicios, ultimoSueldoMensOrd,
+          ingresoAcomulado, ingresoNoAcomulado
+        FROM
+          separacion_indemnizacion
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarDeduccionesPorIdNomina" parameterType="BigInteger" resultType="Deducciones">
+        SELECT
+          idDeducciones, idNomina, totalOtrasDeducciones, totalImpuestosRetenidos
+        FROM
+          deducciones
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarDeduccionPorIdDeducciones" parameterType="BigInteger" resultType="Deduccion">
+        SELECT
+          idDeduccion, idDeducciones, tipoDeduccion, clave, concepto, importe
+        FROM
+          deduccion
+        WHERE
+          idDeducciones = #{idDeducciones}
+    </select>
+
+    <select id="seleccionarIncapacidadPorIdNomina" parameterType="BigInteger" resultType="Incapacidad">
+        SELECT
+          idIncapacidad, idNomina, diasIncapacidad, tipoIncapacidad, importeMonetario
+        FROM
+          incapacidad
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarOtroPagoPorIdNomina" parameterType="BigInteger" resultType="OtroPago">
+        SELECT
+          idOtroPago, idNomina, tipoOtroPago, clave, concepto, importe
+        FROM
+          otro_pago
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarSubsidioPorIdNomina" parameterType="BigInteger" resultType="SubsidioAlEmpleo">
+        SELECT
+          idSubsidio, idNomina, subsidioCausado
+        FROM
+          subsidio_al_empleo
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarCompensacionPorIdNomina" parameterType="BigInteger" resultType="CompensacionSaldosAFavor">
+        SELECT
+          idCompensacion, idNomina, saldoAFavor, ano, remanenteSalFav
+        FROM
+          compensacion_saldos_a_favor
+        WHERE
+          idNomina = #{idNomina}
+    </select>
 	
 </mapper>

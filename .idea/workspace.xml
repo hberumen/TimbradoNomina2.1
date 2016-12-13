@@ -2,48 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60331dd8-07a3-4af6-b703-17fa354bc4db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mybatis/ImplNominaMapper.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/AccionesOTitulosDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/ComprobanteDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/ConceptoDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/DeduccionDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/DeduccionesDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/EmisorDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/EntidadSNFCDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/JubilacionPensionRetiroDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/NominaDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/PercepcionDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/PercepcionesDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/ReceptorDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/RegimenFiscalDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/SeparacionIndemnizacionDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/SubContratacionDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/HorasExtraDao.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/config/SqlConfig.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/config/SqlConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/generador/Generador.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/AccionesOTitulos.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/AccionesOTitulos.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/CompensacionSaldosAFavor.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/CompensacionSaldosAFavor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Concepto.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Concepto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Deduccion.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Deduccion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Deducciones.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Deducciones.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Emisor.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Emisor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/EntidadSNFC.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/EntidadSNFC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/HorasExtra.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/HorasExtra.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Incapacidad.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Incapacidad.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/JubilacionPensionRetiro.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/JubilacionPensionRetiro.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/OtroPago.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/OtroPago.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Percepcion.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Percepcion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Percepciones.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Percepciones.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Receptor.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Receptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/RegimenFiscal.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/RegimenFiscal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/SeparacionIndemnizacion.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/SeparacionIndemnizacion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/SubContratacion.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/SubContratacion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/SubsidioAlEmpleo.java" afterPath="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/SubsidioAlEmpleo.java" />
     </list>
     <ignored path="TimbradoNomina.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,6 +37,20 @@
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="MySQL - nomina@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="compensacion_saldos_a_favor" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -87,62 +61,9 @@
       <file leaf-file-name="Nomina.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+            <state relative-caret-position="390">
+              <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImplNominaMapper.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mybatis/ImplNominaMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-              <folding>
-                <element signature="e#422#423#0" expanded="true" />
-                <element signature="e#449#450#0" expanded="true" />
-                <element signature="e#534#535#0" expanded="true" />
-                <element signature="e#561#562#0" expanded="true" />
-                <element signature="e#635#636#0" expanded="true" />
-                <element signature="e#662#663#0" expanded="true" />
-                <element signature="e#701#702#0" expanded="true" />
-                <element signature="e#728#729#0" expanded="true" />
-                <element signature="e#798#799#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
-                <element signature="e#929#930#0" expanded="true" />
-                <element signature="e#1015#1016#0" expanded="true" />
-                <element signature="e#1042#1043#0" expanded="true" />
-                <element signature="e#1123#1124#0" expanded="true" />
-                <element signature="e#1150#1151#0" expanded="true" />
-                <element signature="e#1239#1240#0" expanded="true" />
-                <element signature="e#1266#1267#0" expanded="true" />
-                <element signature="e#1349#1350#0" expanded="true" />
-                <element signature="e#1376#1377#0" expanded="true" />
-                <element signature="e#1471#1472#0" expanded="true" />
-                <element signature="e#1498#1499#0" expanded="true" />
-                <element signature="e#1588#1589#0" expanded="true" />
-                <element signature="e#1615#1616#0" expanded="true" />
-                <element signature="e#1694#1695#0" expanded="true" />
-                <element signature="e#1721#1722#0" expanded="true" />
-                <element signature="e#1826#1827#0" expanded="true" />
-                <element signature="e#1853#1854#0" expanded="true" />
-                <element signature="e#1958#1959#0" expanded="true" />
-                <element signature="e#1985#1986#0" expanded="true" />
-                <element signature="e#2066#2067#0" expanded="true" />
-                <element signature="e#2093#2094#0" expanded="true" />
-                <element signature="e#2180#2181#0" expanded="true" />
-                <element signature="e#2207#2208#0" expanded="true" />
-                <element signature="e#2288#2289#0" expanded="true" />
-                <element signature="e#2315#2316#0" expanded="true" />
-                <element signature="e#2390#2391#0" expanded="true" />
-                <element signature="e#2417#2418#0" expanded="true" />
-                <element signature="e#2500#2501#0" expanded="true" />
-                <element signature="e#2527#2528#0" expanded="true" />
-                <element signature="e#2622#2623#0" expanded="true" />
-                <element signature="e#2649#2650#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -151,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
-              <caret line="28" column="90" selection-start-line="28" selection-start-column="90" selection-end-line="28" selection-end-column="90" />
+              <caret line="28" column="70" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,19 +80,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NominaMapper.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NominaMapper.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
+            <state relative-caret-position="45">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding>
-                <marker date="1481138965000" expanded="true" signature="326:693" ph="SELECT versi... comprobante" />
-                <marker date="1481138965000" expanded="true" signature="810:1094" ph="SELECT idNom... nomina" />
-                <marker date="1481138965000" expanded="true" signature="1172:1310" ph="SELECT idEmi... emisor" />
-                <marker date="1481138965000" expanded="true" signature="1431:1561" ph="SELECT idReg... regimen_fiscal" />
-                <marker date="1481138965000" expanded="true" signature="1683:2125" ph="SELECT idRec... receptor" />
-                <marker date="1481138965000" expanded="true" signature="2253:2439" ph="SELECT idCon... concepto" />
-                <marker date="1481138965000" expanded="true" signature="2565:2713" ph="SELECT idEnt... entidad_snfc" />
+                <marker date="1481657677000" expanded="true" signature="326:693" ph="SELECT versi... comprobante" />
+                <marker date="1481657677000" expanded="true" signature="810:1094" ph="SELECT idNom... nomina" />
+                <marker date="1481657677000" expanded="true" signature="1172:1310" ph="SELECT idEmi... emisor" />
+                <marker date="1481657677000" expanded="true" signature="1431:1561" ph="SELECT idReg... regimen_fiscal" />
+                <marker date="1481657677000" expanded="true" signature="1683:2125" ph="SELECT idRec... receptor" />
+                <marker date="1481657677000" expanded="true" signature="2253:2439" ph="SELECT idCon... concepto" />
+                <marker date="1481657677000" expanded="true" signature="2565:2713" ph="SELECT idEnt... entidad_snfc" />
+                <marker date="1481657677000" expanded="true" signature="2849:3008" ph="SELECT idSub... subcontratacion" />
+                <marker date="1481657677000" expanded="true" signature="3138:3373" ph="SELECT idPer... percepciones" />
+                <marker date="1481657677000" expanded="true" signature="3505:3707" ph="SELECT idPer... percepcion" />
+                <marker date="1481657677000" expanded="true" signature="3844:4003" ph="SELECT idAcc... acciones_o_titulos" />
+                <marker date="1481657677000" expanded="true" signature="4129:4294" ph="SELECT idHor... horas_extra" />
+                <marker date="1481657677000" expanded="true" signature="4446:4682" ph="SELECT idJub... jubilacion_pension_retiro" />
+                <marker date="1481657677000" expanded="true" signature="4834:5068" ph="SELECT idSep... separacion_indemnizacion" />
+                <marker date="1481657677000" expanded="true" signature="5196:5333" ph="SELECT idDed... deducciones" />
+                <marker date="1481657677000" expanded="true" signature="5196:5366" ph="SELECT idDed... deducciones" />
+                <marker date="1481657677000" expanded="true" signature="5495:5626" ph="SELECT FROM WHERE" />
+                <marker date="1481657677000" expanded="true" signature="5495:5669" ph="SELECT idDed... deduccion" />
+                <marker date="1481657677000" expanded="true" signature="5797:5938" ph="SELECT FROM WHERE" />
+                <marker date="1481657677000" expanded="true" signature="5797:5971" ph="SELECT idInc... incapacidad" />
+                <marker date="1481657677000" expanded="true" signature="6093:6217" ph="SELECT FROM WHERE" />
+                <marker date="1481657677000" expanded="true" signature="6093:6250" ph="SELECT idOtr... otro_pago" />
+                <marker date="1481657677000" expanded="true" signature="6380:6490" ph="SELECT FROM WHERE" />
+                <marker date="1481657677000" expanded="true" signature="6380:6523" ph="SELECT idSub... subsidio_al_empleo" />
+                <marker date="1481657677000" expanded="true" signature="6665:6806" ph="SELECT FROM WHERE" />
+                <marker date="1481657677000" expanded="true" signature="6665:6839" ph="SELECT idCom... compensacion_saldos_a_favor" />
               </folding>
             </state>
           </provider>
@@ -238,7 +178,6 @@
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Conceptos.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Concepto.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/EntidadSNFC.java" />
-        <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/SubContratacion.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Percepciones.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Percepcion.java" />
@@ -254,6 +193,7 @@
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/CompensacionSaldosAFavor.java" />
         <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mybatis/ImplNominaMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml" />
       </list>
     </option>
   </component>
@@ -517,6 +457,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1035,7 +979,7 @@
       <workItem from="1481125625741" duration="623000" />
       <workItem from="1481131891454" duration="1128000" />
       <workItem from="1481133401431" duration="3881000" />
-      <workItem from="1481568272608" duration="7822000" />
+      <workItem from="1481568272608" duration="10012000" />
     </task>
     <task id="LOCAL-00001" summary="Agregar data objects para utilizarlos con orm de bd.">
       <created>1481126051196</created>
@@ -1055,7 +999,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51436000" />
+    <option name="totallyTimeSpent" value="53626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="24" width="1920" height="1002" extended-state="6" />
@@ -1120,13 +1064,6 @@
         <state relative-caret-position="320">
           <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/config/SqlMapConfig.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="49" column="72" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
         </state>
       </provider>
     </entry>
@@ -1376,22 +1313,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="74" column="13" selection-start-line="74" selection-start-column="13" selection-end-line="74" selection-end-column="13" />
-          <folding>
-            <marker date="1481138965000" expanded="true" signature="326:693" ph="SELECT versi... comprobante" />
-            <marker date="1481138965000" expanded="true" signature="810:1094" ph="SELECT idNom... nomina" />
-            <marker date="1481138965000" expanded="true" signature="1172:1310" ph="SELECT idEmi... emisor" />
-            <marker date="1481138965000" expanded="true" signature="1431:1561" ph="SELECT idReg... regimen_fiscal" />
-            <marker date="1481138965000" expanded="true" signature="1683:2125" ph="SELECT idRec... receptor" />
-            <marker date="1481138965000" expanded="true" signature="2253:2439" ph="SELECT idCon... concepto" />
-            <marker date="1481138965000" expanded="true" signature="2565:2713" ph="SELECT idEnt... entidad_snfc" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/dao/PercepcionDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1446,22 +1367,6 @@
         <state relative-caret-position="195">
           <caret line="17" column="59" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="59" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/HorasExtra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
-          <folding>
-            <element signature="e#1327#1328#0" expanded="true" />
-            <element signature="e#1387#1388#0" expanded="true" />
-            <element signature="e#1435#1436#0" expanded="true" />
-            <element signature="e#1474#1475#0" expanded="true" />
-            <element signature="e#1505#1506#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
-            <element signature="e#1597#1598#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1613,16 +1518,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="90" selection-start-line="28" selection-start-column="90" selection-end-line="28" selection-end-column="90" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/CompensacionSaldosAFavor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -1637,14 +1532,6 @@
             <element signature="e#1422#1423#0" expanded="true" />
             <element signature="e#1462#1463#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="46" column="20" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1695,6 +1582,75 @@
             <element signature="e#2527#2528#0" expanded="true" />
             <element signature="e#2622#2623#0" expanded="true" />
             <element signature="e#2649#2650#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/config/SqlMapConfig.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="481">
+          <caret line="49" column="72" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/Nomina.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/modelo/HorasExtra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="70" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/me/hberumen/nomina/bd/mappers/NominaMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding>
+            <marker date="1481657677000" expanded="true" signature="326:693" ph="SELECT versi... comprobante" />
+            <marker date="1481657677000" expanded="true" signature="810:1094" ph="SELECT idNom... nomina" />
+            <marker date="1481657677000" expanded="true" signature="1172:1310" ph="SELECT idEmi... emisor" />
+            <marker date="1481657677000" expanded="true" signature="1431:1561" ph="SELECT idReg... regimen_fiscal" />
+            <marker date="1481657677000" expanded="true" signature="1683:2125" ph="SELECT idRec... receptor" />
+            <marker date="1481657677000" expanded="true" signature="2253:2439" ph="SELECT idCon... concepto" />
+            <marker date="1481657677000" expanded="true" signature="2565:2713" ph="SELECT idEnt... entidad_snfc" />
+            <marker date="1481657677000" expanded="true" signature="2849:3008" ph="SELECT idSub... subcontratacion" />
+            <marker date="1481657677000" expanded="true" signature="3138:3373" ph="SELECT idPer... percepciones" />
+            <marker date="1481657677000" expanded="true" signature="3505:3707" ph="SELECT idPer... percepcion" />
+            <marker date="1481657677000" expanded="true" signature="3844:4003" ph="SELECT idAcc... acciones_o_titulos" />
+            <marker date="1481657677000" expanded="true" signature="4129:4294" ph="SELECT idHor... horas_extra" />
+            <marker date="1481657677000" expanded="true" signature="4446:4682" ph="SELECT idJub... jubilacion_pension_retiro" />
+            <marker date="1481657677000" expanded="true" signature="4834:5068" ph="SELECT idSep... separacion_indemnizacion" />
+            <marker date="1481657677000" expanded="true" signature="5196:5333" ph="SELECT idDed... deducciones" />
+            <marker date="1481657677000" expanded="true" signature="5196:5366" ph="SELECT idDed... deducciones" />
+            <marker date="1481657677000" expanded="true" signature="5495:5626" ph="SELECT FROM WHERE" />
+            <marker date="1481657677000" expanded="true" signature="5495:5669" ph="SELECT idDed... deduccion" />
+            <marker date="1481657677000" expanded="true" signature="5797:5938" ph="SELECT FROM WHERE" />
+            <marker date="1481657677000" expanded="true" signature="5797:5971" ph="SELECT idInc... incapacidad" />
+            <marker date="1481657677000" expanded="true" signature="6093:6217" ph="SELECT FROM WHERE" />
+            <marker date="1481657677000" expanded="true" signature="6093:6250" ph="SELECT idOtr... otro_pago" />
+            <marker date="1481657677000" expanded="true" signature="6380:6490" ph="SELECT FROM WHERE" />
+            <marker date="1481657677000" expanded="true" signature="6380:6523" ph="SELECT idSub... subsidio_al_empleo" />
+            <marker date="1481657677000" expanded="true" signature="6665:6806" ph="SELECT FROM WHERE" />
+            <marker date="1481657677000" expanded="true" signature="6665:6839" ph="SELECT idCom... compensacion_saldos_a_favor" />
           </folding>
         </state>
       </provider>
