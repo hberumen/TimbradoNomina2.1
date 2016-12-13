@@ -3,6 +3,7 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 /**
  * Created by hberumen on 30/11/16.
@@ -10,9 +11,11 @@ import java.math.BigDecimal;
 @XmlRootElement(name="CompensacionSaldosAFavor")
 public class CompensacionSaldosAFavor {
 
+    private BigInteger idCompensacion;
+    private BigInteger idNomina;
     private BigDecimal saldoAFavor;
     private Integer ano;
-    private BigDecimal RemanenteSalFav;
+    private BigDecimal remanenteSalFav;
 
     public CompensacionSaldosAFavor() {
     }
@@ -37,10 +40,26 @@ public class CompensacionSaldosAFavor {
 
     @XmlAttribute
     public BigDecimal getRemanenteSalFav() {
-        return RemanenteSalFav;
+        return remanenteSalFav;
     }
 
     public void setRemanenteSalFav(BigDecimal remanenteSalFav) {
-        RemanenteSalFav = remanenteSalFav;
+        remanenteSalFav = remanenteSalFav;
+    }
+
+    public BigInteger getIdCompensacion() {
+        return idCompensacion;
+    }
+
+    public void setIdCompensacion(BigInteger idCompensacion) {
+        this.idCompensacion = idCompensacion;
+    }
+
+    public BigInteger getIdNomina() {
+        return idNomina;
+    }
+
+    public void setIdNomina(BigInteger idNomina) {
+        this.idNomina = idNomina;
     }
 }

@@ -3,6 +3,7 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 /**
  * Created by hberumen on 30/11/16.
@@ -10,6 +11,8 @@ import java.math.BigDecimal;
 @XmlRootElement(name="Percepcion")
 public class Percepcion {
 
+    private BigInteger idPercepcion;
+    private BigInteger idPercepciones;
     private String tipoPercepcion;
     private String clave;
     private String concepto;
@@ -62,5 +65,21 @@ public class Percepcion {
 
     public void setImporteExento(BigDecimal importeExento) {
         this.importeExento = importeExento;
+    }
+
+    public BigInteger getIdPercepcion() {
+        return idPercepcion;
+    }
+
+    public void setIdPercepcion(BigInteger idPercepcion) {
+        this.idPercepcion = idPercepcion;
+    }
+
+    public BigInteger getIdPercepciones() {
+        return idPercepciones;
+    }
+
+    public void setIdPercepciones(BigInteger idPercepciones) {
+        this.idPercepciones = idPercepciones;
     }
 }

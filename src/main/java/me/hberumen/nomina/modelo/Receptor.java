@@ -3,14 +3,17 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.Date;
 
 /**
  * Created by hberumen on 25/11/16.
  */
-@XmlRootElement(name = "Emisor")
+@XmlRootElement(name = "Receptor")
 public class Receptor {
 
+    private BigInteger idReceptor;
+    private BigInteger idComprobante;
     private String rfc;
     private String nombre;
     private String curp;
@@ -30,7 +33,7 @@ public class Receptor {
     private String cuentaBancaria;
     private BigDecimal salarioBaseCotApor;
     private BigDecimal salarioDiarioIntegrado;
-    private String ClaveEntFed;
+    private String claveEntFed;
 
 
     public Receptor() {
@@ -210,10 +213,26 @@ public class Receptor {
 
     @XmlAttribute
     public String getClaveEntFed() {
-        return ClaveEntFed;
+        return claveEntFed;
     }
 
     public void setClaveEntFed(String claveEntFed) {
-        ClaveEntFed = claveEntFed;
+        claveEntFed = claveEntFed;
+    }
+
+    public BigInteger getIdReceptor() {
+        return idReceptor;
+    }
+
+    public void setIdReceptor(BigInteger idReceptor) {
+        this.idReceptor = idReceptor;
+    }
+
+    public BigInteger getIdComprobante() {
+        return idComprobante;
+    }
+
+    public void setIdComprobante(BigInteger idComprobante) {
+        this.idComprobante = idComprobante;
     }
 }

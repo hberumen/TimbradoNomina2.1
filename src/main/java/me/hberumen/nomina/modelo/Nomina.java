@@ -19,6 +19,8 @@ public class Nomina {
 
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-mm-dd");
 
+    private BigInteger idComprobante;
+    private BigInteger idNomina;
     private String version;
     private String tipoNomina;
     private Date fechaPago;
@@ -251,5 +253,21 @@ public class Nomina {
 
     public void setCompensacionSaldosAFavor(CompensacionSaldosAFavor compensacionSaldosAFavor) {
         this.compensacionSaldosAFavor = compensacionSaldosAFavor;
+    }
+
+    public BigInteger getIdComprobante() {
+        return idComprobante;
+    }
+
+    public void setIdComprobante(BigInteger idComprobante) {
+        this.idComprobante = idComprobante;
+    }
+
+    public BigInteger getIdNomina() {
+        return idNomina;
+    }
+
+    public void setIdNomina(BigInteger idNomina) {
+        this.idNomina = idNomina;
     }
 }

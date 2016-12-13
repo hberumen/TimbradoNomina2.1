@@ -3,6 +3,7 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -11,6 +12,8 @@ import java.util.List;
 @XmlRootElement(name="Percepciones")
 public class Percepciones {
 
+    private BigInteger idPercepciones;
+    private BigInteger idNomina;
     private BigDecimal totalSueldos;
     private BigDecimal totalSeparacionIndemnizacion;
     private BigDecimal totalJubilacionPensionRetiro;
@@ -73,5 +76,21 @@ public class Percepciones {
 
     public void setPercepcion(List<Percepcion> percepcion) {
         this.percepcion = percepcion;
+    }
+
+    public BigInteger getIdPercepciones() {
+        return idPercepciones;
+    }
+
+    public void setIdPercepciones(BigInteger idPercepciones) {
+        this.idPercepciones = idPercepciones;
+    }
+
+    public BigInteger getIdNomina() {
+        return idNomina;
+    }
+
+    public void setIdNomina(BigInteger idNomina) {
+        this.idNomina = idNomina;
     }
 }

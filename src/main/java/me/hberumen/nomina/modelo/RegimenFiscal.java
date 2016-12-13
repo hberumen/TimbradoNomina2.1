@@ -10,6 +10,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class RegimenFiscal {
 
     private String regimen;
+    private int idEmisor;
+    private int idRegimenFiscal;
 
     public RegimenFiscal() {
 
@@ -24,4 +26,11 @@ public class RegimenFiscal {
         this.regimen = regimen;
     }
 
+    public int getIdEmisor() {
+        return idEmisor;
+    }
+
+    public void setIdEmisor(int idEmisor) {
+        this.idEmisor = idEmisor;
+    }
 }

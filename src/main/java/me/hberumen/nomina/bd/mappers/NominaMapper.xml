@@ -4,6 +4,76 @@
 
 <mapper namespace="me.hberumen.nomina.bd.mappers.NominaMapper">
 	
-    <select id=""></select>
+    <select id="seleccionarComprobantePorAgrupa" parameterType="BigInteger" resultType="Comprobante">
+        SELECT
+          version, serie, folio, fecha, sello, formaDePago, noCertificado, certificado,
+          subTotal, descuento, tipoCambio, moneda, total, tipoDeComprobante, metodoDePago,
+          lugarExpedicion, usuarioAlta, fechaAlta, generado, agrupaTimbres, idComprobante
+        from
+          comprobante
+        where
+          agrupaTimbres = #{agrupaTimbres}
+    </select>
+
+    <select id="getNominaFromIdComprobante" parameterType="BigInteger" resultType="Nomina">
+
+        SELECT
+          idNomina, idComprobante, version, tipoNomina, fechaPago, fechaInicialPago, fechaFinalPago,
+          numDiasPagados, totalPercepciones, totalDeducciones, totalOtrosPagos, fechaAlta
+        FROM
+          nomina
+        WHERE
+          idComprobante = #{idComprobante}
+    </select>
+
+    <select id="getEmisorActivo" resultType="Emisor">
+        SELECT
+          idEmisor, rfc, nombre, registroPatronal, rfcPatronOrigen
+        from
+          emisor
+        WHERE
+          activo = 1
+    </select>
+
+    <select id="getRegimenFiscalPorIdEmisor" parameterType="Integer" resultType="RegimenFiscal">
+        SELECT
+          idRegimenFiscal, idEmisor, regimen
+        from
+          regimen_fiscal
+        WHERE
+          idEmisor = #{id}
+    </select>rfc
+
+    <select id="getReceptorPorIdComprobante" parameterType="BigInteger" resultType="Receptor">
+        SELECT
+          idReceptor, idComprobante, rfc, nombre, curp, numSeguridadSocial, fechaInicioRelacionLaboral,
+          antiguedad, tipoContrato, sindicalizado, tipoJornada, tipoRegimen, numEmpleado, departamento,
+          puesto, riesgoPuesto, periodicidadPago, banco, cuentaBancaria, salarioBaseCotApor,
+          salarioDiarioIntegrado, claveEntFed
+        FROM
+          receptor
+        WHERE
+          idComprobante = #{idComprobante}
+    </select>
+
+    <select id="seleccionarConceptosPorIdComprobante" parameterType="BigInteger" resultType="Concepto">
+        SELECT
+          idConcepto, idComprobante, cantidad, unidad, descripcion, valorUnitario, importe
+        FROM
+          concepto
+        WHERE
+          idComprobante = #{idComprobante}
+    </select>
+
+    <select id="seleccionarEntidadSNFCPorIdNomina" parameterType="BigInteger" resultType="EntidadSNFC">
+      SELECT
+        idEntidadSnfc, idNomina, origenRecurso, montoRecursoPropio
+      FROM
+        entidad_snfc
+      WHERE
+        idNomina = #{idNomina}
+    </select>
+
+
 	
 </mapper>

@@ -1,5 +1,6 @@
 package me.hberumen.nomina.generador;
 
+import me.hberumen.nomina.bd.mappers.NominaMapper;
 import me.hberumen.nomina.dao.*;
 import me.hberumen.nomina.modelo.*;
 
@@ -14,10 +15,12 @@ public class Generador {
     private EmisorDao emisorDao;
     private Receptor receptor;
     private Complemento complemento;
-    private NominaDao nominadao;
+    private Nomina nomina;
+    private NominaMapper nominaMapper;
 
-    public Generador(Comprobante comprobante) {
+    public Generador(Comprobante comprobante, NominaMapper nominaMapper) {
         this.comprobante = comprobante;
+        this.nominaMapper = nominaMapper;
     }
 
     public void generaCfdiNomina(){
@@ -33,12 +36,13 @@ public class Generador {
     }
 
     private void setComplementoNomina() {
-        nominadao = new NominaDao(comprobante.getIdComprobante());
-        nominadao = nominadao.getNominaFromIdComprobante();
-        complemento.setNomina(nominadao);
+        nomina = new Nomina();
+        nomina.setIdComprobante(comprobante.getIdComprobante());
+        nomina = nominaMapper.getNominaFromIdComprobante();
+        complemento.setNomina(nomina);
 
-        nominadao.setEmisor(emisorDao);
-        nominadao.setReceptor(receptor);
+        nomina.setEmisor(emisorDao);
+        nomina.setReceptor(receptor);
 
         setEntidadSNFCNomina();
         setSubContratacionNomina();
@@ -51,41 +55,41 @@ public class Generador {
     }
 
     private void setDeduccionesNomina() {
-        DeduccionesDao deduccionesDao = new DeduccionesDao(nominadao.getIdNomina());
+        DeduccionesDao deduccionesDao = new DeduccionesDao(nomina.getIdNomina());
         deduccionesDao = deduccionesDao.seleccionarDeduccionesPorIdNomina();
-        nominadao.setDeducciones(deduccionesDao);
+        nomina.setDeducciones(deduccionesDao);
 
         DeduccionDao deduccionDao = new DeduccionDao(deduccionesDao.getIdDeducciones());
 
     }
 
     private void setSeparacionIndemnizacionNomina() {
-        SeparacionIndemnizacionDao separacionIndemnizacionDao = new SeparacionIndemnizacionDao(nominadao.getIdNomina());
+        SeparacionIndemnizacionDao separacionIndemnizacionDao = new SeparacionIndemnizacionDao(nomina.getIdNomina());
         SeparacionIndemnizacion separacionIndemnizacion = separacionIndemnizacionDao.seleccionarSeparacionIndemnizacionPorIdNomina();
-        nominadao.setSeparacionIndemnizacion(separacionIndemnizacion);
+        nomina.setSeparacionIndemnizacion(separacionIndemnizacion);
     }
 
     private void setJubilacionPensionRetiroNomina() {
-        JubilacionPensionRetiroDao jubilacionPensionRetiroDao = new JubilacionPensionRetiroDao(nominadao.getIdNomina());
+        JubilacionPensionRetiroDao jubilacionPensionRetiroDao = new JubilacionPensionRetiroDao(nomina.getIdNomina());
         JubilacionPensionRetiro jubilacionPensionRetiro = jubilacionPensionRetiroDao.seleccionarJubilacionPensionRetiroPorIdNomina();
-        nominadao.setJubilacionPensionRetiro(jubilacionPensionRetiro);
+        nomina.setJubilacionPensionRetiro(jubilacionPensionRetiro);
     }
 
     private void setHorasExtraNomina() {
-        HorasExtraDao horasExtraDao = new HorasExtraDao(nominadao.getIdComprobante());
+        HorasExtraDao horasExtraDao = new HorasExtraDao(nomina.getIdComprobante());
         HorasExtra horasExtra = new HorasExtra();
-        nominadao.setHorasExtra(horasExtra);
+        nomina.setHorasExtra(horasExtra);
     }
 
     private void setAccionesOTitulosNomina() {
-        AccionesOTitulosDao accionesOTitulosDao = new AccionesOTitulosDao(nominadao.getIdNomina());
+        AccionesOTitulosDao accionesOTitulosDao = new AccionesOTitulosDao(nomina.getIdNomina());
         AccionesOTitulos accionesOTitulos = accionesOTitulosDao.selecionarAccionesOTitulosPorIdNomina();
-        nominadao.setAccionesOTitulos(accionesOTitulos);
+        nomina.setAccionesOTitulos(accionesOTitulos);
     }
 
     private void setPercepcionesNomina() {
-        PercepcionesDao percepcionesDao = new PercepcionesDao(nominadao.getIdNomina());
-        nominadao.setPercepciones(percepcionesDao);
+        PercepcionesDao percepcionesDao = new PercepcionesDao(nomina.getIdNomina());
+        nomina.setPercepciones(percepcionesDao);
 
         PercepcionDao percepcionDao = new PercepcionDao(percepcionesDao.getIdPercepciones());
         List<Percepcion>  listPercepcion = percepcionDao.seleccionarPercepcionPorIdPercepciones();
@@ -95,15 +99,15 @@ public class Generador {
     }
 
     private void setSubContratacionNomina() {
-        SubContratacionDao subContratacionDao = new SubContratacionDao(nominadao.getIdNomina());
+        SubContratacionDao subContratacionDao = new SubContratacionDao(nomina.getIdNomina());
         SubContratacion subContratacion = subContratacionDao.seleccionarSubContratacionPorIdNomina();
-        nominadao.setSubContratacion(subContratacion);
+        nomina.setSubContratacion(subContratacion);
 
     }
 
     private void setEntidadSNFCNomina() {
-        EntidadSNFCDao entidadSNFCDao = new EntidadSNFCDao(nominadao.getIdNomina());
-        nominadao.setEntidadSNFC(entidadSNFCDao);
+        EntidadSNFCDao entidadSNFCDao = new EntidadSNFCDao(nomina.getIdNomina());
+        nomina.setEntidadSNFC(entidadSNFCDao);
     }
 
 

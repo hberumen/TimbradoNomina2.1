@@ -3,6 +3,7 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 /**
  * Created by hberumen on 30/11/16.
@@ -10,6 +11,8 @@ import java.math.BigDecimal;
 @XmlRootElement(name="SeparacionIndemnizacion")
 public class SeparacionIndemnizacion {
 
+    private BigInteger idSeparacion;
+    private BigInteger idNomina;
     private BigDecimal totalPagado;
     private Integer numAnosServicios;
     private BigDecimal ultimoSueldoMensOrd;
@@ -62,5 +65,21 @@ public class SeparacionIndemnizacion {
 
     public void setIngresoNoAcomulado(BigDecimal ingresoNoAcomulado) {
         this.ingresoNoAcomulado = ingresoNoAcomulado;
+    }
+
+    public BigInteger getIdSeparacion() {
+        return idSeparacion;
+    }
+
+    public void setIdSeparacion(BigInteger idSeparacion) {
+        this.idSeparacion = idSeparacion;
+    }
+
+    public BigInteger getIdNomina() {
+        return idNomina;
+    }
+
+    public void setIdNomina(BigInteger idNomina) {
+        this.idNomina = idNomina;
     }
 }

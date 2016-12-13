@@ -3,6 +3,7 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 /**
@@ -11,8 +12,10 @@ import java.util.List;
 @XmlRootElement(name="Deducciones")
 public class Deducciones {
 
+    private BigInteger idDeducciones;
+    private BigInteger idNomina;
     private BigDecimal totalOtrasDeducciones;
-    private BigDecimal TotalImpuestosRetenidos;
+    private BigDecimal totalImpuestosRetenidos;
     private List<Deduccion> deduccion;
 
     public Deducciones() {
@@ -29,11 +32,11 @@ public class Deducciones {
 
     @XmlAttribute
     public BigDecimal getTotalImpuestosRetenidos() {
-        return TotalImpuestosRetenidos;
+        return totalImpuestosRetenidos;
     }
 
     public void setTotalImpuestosRetenidos(BigDecimal totalImpuestosRetenidos) {
-        TotalImpuestosRetenidos = totalImpuestosRetenidos;
+        totalImpuestosRetenidos = totalImpuestosRetenidos;
     }
 
 
@@ -43,5 +46,21 @@ public class Deducciones {
 
     public void setDeduccion(List<Deduccion> deduccion) {
         this.deduccion = deduccion;
+    }
+
+    public BigInteger getIdDeducciones() {
+        return idDeducciones;
+    }
+
+    public void setIdDeducciones(BigInteger idDeducciones) {
+        this.idDeducciones = idDeducciones;
+    }
+
+    public BigInteger getIdNomina() {
+        return idNomina;
+    }
+
+    public void setIdNomina(BigInteger idNomina) {
+        this.idNomina = idNomina;
     }
 }

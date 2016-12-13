@@ -3,6 +3,7 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 /**
  * Created by hberumen on 30/11/16.
@@ -10,6 +11,8 @@ import java.math.BigDecimal;
 @XmlRootElement(name="AccionesOTitulos")
 public class AccionesOTitulos {
 
+    private BigInteger idAcciones;
+    private BigInteger idNomina;
     private BigDecimal valorMercado;
     private BigDecimal precioAlOtorgarse;
 
@@ -32,5 +35,21 @@ public class AccionesOTitulos {
 
     public void setPrecioAlOtorgarse(BigDecimal precioAlOtorgarse) {
         this.precioAlOtorgarse = precioAlOtorgarse;
+    }
+
+    public BigInteger getIdNomina() {
+        return idNomina;
+    }
+
+    public void setIdNomina(BigInteger idNomina) {
+        this.idNomina = idNomina;
+    }
+
+    public BigInteger getIdAcciones() {
+        return idAcciones;
+    }
+
+    public void setIdAcciones(BigInteger idAcciones) {
+        this.idAcciones = idAcciones;
     }
 }
