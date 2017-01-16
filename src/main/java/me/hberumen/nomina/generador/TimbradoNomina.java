@@ -1,4 +1,7 @@
-package me.hberumen.nomina.modelo;
+package me.hberumen.nomina.generador;
+
+import me.hberumen.nomina.modelo.Comprobante;
+import me.hberumen.nomina.modelo.Nomina;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -10,10 +13,10 @@ import java.io.File;
  */
 public class TimbradoNomina {
 
-    private  Comprobante comprobante;
+    private Comprobante comprobante;
 
     public TimbradoNomina() {
-        comprobante = new Comprobante();
+
     }
 
     public Comprobante getComprobante() {

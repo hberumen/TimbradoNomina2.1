@@ -37,10 +37,10 @@ public class Generador {
     private void setComplementoNomina() {
         nomina = new Nomina();
         nomina.setIdComprobante(comprobante.getIdComprobante());
-        nomina = nominaMapper.getNominaFromIdComprobante();
+        nomina = nominaMapper.getNominaFromIdComprobante(comprobante.getIdComprobante());
         complemento.setNomina(nomina);
 
-        nomina.setEmisor(emisorDao);
+        nomina.setEmisor(emisor);
         nomina.setReceptor(receptor);
 
         setEntidadSNFCNomina();
@@ -119,27 +119,23 @@ public class Generador {
         Conceptos conceptos = new Conceptos();
         comprobante.setConceptos(conceptos);
 
-        Concepto conceptoDao = new ConceptoDao(comprobante.getIdComprobante());
-        Concepto concepto = conceptoDao.seleccionarConceptosPorIdComprobante();
+        Concepto concepto = nominaMapper.seleccionarConceptosPorIdComprobante(comprobante.getIdComprobante());
         conceptos.setConcepto(concepto);
     }
 
     private void setReceptor() {
-        ReceptorDao receptorDao = new ReceptorDao(comprobante.getIdComprobante());
-        receptor = receptorDao.getReceptorPorIdComprobante();
+        receptor = nominaMapper.getReceptorPorIdComprobante(comprobante.getIdComprobante());
         comprobante.setReceptor(receptor);
     }
 
     private void setRegimenFiscal() {
-        RegimenFiscalDao regimenFiscalDao = new RegimenFiscalDao(emisorDao.getIdEmisor());
-        RegimenFiscal regimenFiscal = regimenFiscalDao.getRegimenFiscalPorIdEmisor();
+        RegimenFiscal regimenFiscal = nominaMapper.getRegimenFiscalPorIdEmisor(emisor.getIdEmisor());
         comprobante.setRegimenFiscal(regimenFiscal);
     }
 
     private void setEmisor() {
-        emisorDao = new EmisorDao();
-        emisorDao = emisorDao.getEmisorActivo();
-        emisorDao.setRegistroPatronal(null);
-        comprobante.setEmisor(emisorDao);
+        emisor = nominaMapper.getEmisorActivo();
+        emisor.setRegistroPatronal(null);
+        comprobante.setEmisor(emisor);
     }
 }

@@ -1,7 +1,7 @@
 import me.hberumen.nomina.modelo.Complemento;
 import me.hberumen.nomina.modelo.Comprobante;
 import me.hberumen.nomina.modelo.Nomina;
-import me.hberumen.nomina.modelo.TimbradoNomina;
+import me.hberumen.nomina.generador.TimbradoNomina;
 import javax.xml.bind.JAXBException;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
@@ -18,8 +18,10 @@ public class Test {
     public static void main(String ... s) throws JAXBException {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
+
         TimbradoNomina timbradoNomina = new TimbradoNomina();
-        Comprobante comprobante = timbradoNomina.getComprobante();
+        Comprobante comprobante = null;
+
         comprobante.setVersion("3.2");
         comprobante.setSerie("Serie");
         comprobante.setFolio("Folio");
