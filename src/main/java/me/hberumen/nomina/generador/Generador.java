@@ -2,7 +2,13 @@ package me.hberumen.nomina.generador;
 
 import me.hberumen.nomina.bd.mappers.NominaMapper;
 import me.hberumen.nomina.modelo.*;
+import me.hberumen.nomina.modelo.jtd.ComprobanteDb;
+import me.hberumen.nomina.modelo.jtd.EmisorDb;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import java.io.File;
 import java.util.List;
 
 /**
@@ -10,14 +16,14 @@ import java.util.List;
  */
 public class Generador {
 
-    private Comprobante comprobante;
-    private Emisor emisor;
+    private ComprobanteDb comprobante;
+    private EmisorDb emisor;
     private Receptor receptor;
     private Complemento complemento;
     private Nomina nomina;
     private NominaMapper nominaMapper;
 
-    public Generador(Comprobante comprobante, NominaMapper nominaMapper) {
+    public Generador(ComprobanteDb comprobante, NominaMapper nominaMapper) {
         this.comprobante = comprobante;
         this.nominaMapper = nominaMapper;
     }
@@ -41,7 +47,8 @@ public class Generador {
         complemento.setNomina(nomina);
 
         nomina.setEmisor(emisor);
-        nomina.setReceptor(receptor);
+        Receptor receptorM = nominaMapper.getReceptorPorIdComprobanteNomina(comprobante.getIdComprobante());
+        nomina.setReceptor(receptorM);
 
         setEntidadSNFCNomina();
         setSubContratacionNomina();
@@ -125,7 +132,8 @@ public class Generador {
 
     private void setReceptor() {
         receptor = nominaMapper.getReceptorPorIdComprobante(comprobante.getIdComprobante());
-        comprobante.setReceptor(receptor);
+        Receptor receptorM = receptor;
+        comprobante.setReceptor(receptorM);
     }
 
     private void setRegimenFiscal() {
@@ -136,6 +144,24 @@ public class Generador {
     private void setEmisor() {
         emisor = nominaMapper.getEmisorActivo();
         emisor.setRegistroPatronal(null);
-        comprobante.setEmisor(emisor);
+        Emisor emisorM = emisor;
+        comprobante.setEmisor(emisorM);
+    }
+
+    public void generaXml() {
+
+        Comprobante comprobanteMar = comprobante;
+
+        JAXBContext context = null;
+        try {
+            context = JAXBContext.newInstance(Comprobante.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, Comprobante.SCHEMA_SAT+ Nomina.SCHEMA_NOMINA);
+            marshaller.marshal(comprobanteMar, System.out);
+            marshaller.marshal(comprobanteMar, new File("Comprobante.xml"));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
     }
 }

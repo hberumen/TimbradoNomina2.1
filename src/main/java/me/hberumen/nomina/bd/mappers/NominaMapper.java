@@ -1,18 +1,20 @@
 package me.hberumen.nomina.bd.mappers;
 
 import me.hberumen.nomina.modelo.*;
+import me.hberumen.nomina.modelo.jtd.*;
 
 import java.math.BigInteger;
 import java.util.List;
 
 public interface NominaMapper {
 
-    public List<Comprobante> seleccionarComprobantePorAgrupa(BigInteger idAgrupa);
+    public List<ComprobanteDb> seleccionarComprobantePorAgrupa(String agrupa);
     public Nomina getNominaFromIdComprobante(BigInteger idComprobante);
-    public Emisor getEmisorActivo();
-    public RegimenFiscal getRegimenFiscalPorIdEmisor(int idEmisor);
-    public Receptor getReceptorPorIdComprobante(BigInteger idComprobante);
-    public Concepto seleccionarConceptosPorIdComprobante(BigInteger idComprobante);
+    public EmisorDb getEmisorActivo();
+    public RegimenFiscalDb getRegimenFiscalPorIdEmisor(int idEmisor);
+    public ReceptorDb getReceptorPorIdComprobante(BigInteger idComprobante);
+    public ReceptorDb getReceptorPorIdComprobanteNomina(BigInteger idComprobante);
+    public ConceptoDb seleccionarConceptosPorIdComprobante(BigInteger idComprobante);
     public EntidadSNFC seleccionarEntidadSNFCPorIdNomina(BigInteger idNomina);
     public SubContratacion seleccionarSubContratacionPorIdNomina(BigInteger idNomina);
     public Percepciones seleccionarPercepcionesPorIdNomina(BigInteger idNomina);

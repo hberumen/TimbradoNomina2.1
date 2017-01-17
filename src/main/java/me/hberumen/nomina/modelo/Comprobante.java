@@ -14,7 +14,7 @@ public class Comprobante {
 
     public static final String SCHEMA_SAT = "http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd ";
 
-    private BigInteger idComprobante;
+
     private String version;
     private String serie;
     private String folio;
@@ -240,11 +240,5 @@ public class Comprobante {
         this.complemento = complemento;
     }
 
-    public BigInteger getIdComprobante() {
-        return idComprobante;
-    }
 
-    public void setIdComprobante(BigInteger idComprobante) {
-        this.idComprobante = idComprobante;
-    }
 }

@@ -2,6 +2,7 @@ package me.hberumen.nomina.bd.mybatis;
 
 import me.hberumen.nomina.bd.mappers.NominaMapper;
 import me.hberumen.nomina.modelo.*;
+import me.hberumen.nomina.modelo.jtd.*;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -11,15 +12,11 @@ import java.util.List;
  */
 public class ImplNominaMapper implements NominaMapper {
 
-    public List<Comprobante> seleccionarComprobantePorAgrupa() {
-        return null;
-    }
-
     public Nomina getNominaFromIdComprobante() {
         return null;
     }
 
-    public List<Comprobante> seleccionarComprobantePorAgrupa(BigInteger idAgrupa) {
+    public List<ComprobanteDb> seleccionarComprobantePorAgrupa(String agrupa) {
         return null;
     }
 
@@ -27,19 +24,23 @@ public class ImplNominaMapper implements NominaMapper {
         return null;
     }
 
-    public Emisor getEmisorActivo() {
+    public EmisorDb getEmisorActivo() {
         return null;
     }
 
-    public RegimenFiscal getRegimenFiscalPorIdEmisor(int idEmisor) {
+    public RegimenFiscalDb getRegimenFiscalPorIdEmisor(int idEmisor) {
         return null;
     }
 
-    public Receptor getReceptorPorIdComprobante(BigInteger idComprobante) {
+    public ReceptorDb getReceptorPorIdComprobante(BigInteger idComprobante) {
         return null;
     }
 
-    public Concepto seleccionarConceptosPorIdComprobante(BigInteger idComprobante) {
+    public ReceptorDb getReceptorPorIdComprobanteNomina(BigInteger idComprobante) {
+        return null;
+    }
+
+    public ConceptoDb seleccionarConceptosPorIdComprobante(BigInteger idComprobante) {
         return null;
     }
 

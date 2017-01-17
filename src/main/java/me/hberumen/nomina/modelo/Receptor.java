@@ -12,8 +12,7 @@ import java.util.Date;
 @XmlRootElement(name = "Receptor")
 public class Receptor {
 
-    private BigInteger idReceptor;
-    private BigInteger idComprobante;
+
     private String rfc;
     private String nombre;
     private String curp;
@@ -220,19 +219,5 @@ public class Receptor {
         claveEntFed = claveEntFed;
     }
 
-    public BigInteger getIdReceptor() {
-        return idReceptor;
-    }
 
-    public void setIdReceptor(BigInteger idReceptor) {
-        this.idReceptor = idReceptor;
-    }
-
-    public BigInteger getIdComprobante() {
-        return idComprobante;
-    }
-
-    public void setIdComprobante(BigInteger idComprobante) {
-        this.idComprobante = idComprobante;
-    }
 }

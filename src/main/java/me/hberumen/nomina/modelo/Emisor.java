@@ -13,7 +13,7 @@ public class Emisor {
 
     private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-mm-dd");
 
-    private int idEmisor;
+
     private String rfc;
     private String nombre;
     private String registroPatronal;
@@ -61,11 +61,5 @@ public class Emisor {
         this.rfcPatronOrigen = rfcPatronOrigen;
     }
 
-    public int getIdEmisor() {
-        return idEmisor;
-    }
 
-    public void setIdEmisor(int idEmisor) {
-        this.idEmisor = idEmisor;
-    }
 }

@@ -27,18 +27,5 @@ public class TimbradoNomina {
         this.comprobante = comprobante;
     }
 
-    public void generaXml() {
 
-        JAXBContext context = null;
-        try {
-            context = JAXBContext.newInstance(Comprobante.class);
-            Marshaller marshaller = context.createMarshaller();
-            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, Comprobante.SCHEMA_SAT+ Nomina.SCHEMA_NOMINA);
-            marshaller.marshal(comprobante, System.out);
-            marshaller.marshal(comprobante, new File("Comprobante.xml"));
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
-    }
 }

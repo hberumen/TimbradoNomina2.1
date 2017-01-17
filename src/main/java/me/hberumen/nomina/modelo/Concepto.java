@@ -11,8 +11,7 @@ import java.math.BigInteger;
 @XmlRootElement(name = "Concepto")
 public class Concepto {
 
-    private  BigInteger idConcepto;
-    private BigInteger idComprobante;
+
     private Integer cantidad;
     private String unidad;
     private String descripcion;
@@ -67,19 +66,5 @@ public class Concepto {
         this.importe = importe;
     }
 
-    public BigInteger getIdComprobante() {
-        return idComprobante;
-    }
 
-    public void setIdComprobante(BigInteger idComprobante) {
-        this.idComprobante = idComprobante;
-    }
-
-    public BigInteger getIdConcepto() {
-        return idConcepto;
-    }
-
-    public void setIdConcepto(BigInteger idConcepto) {
-        this.idConcepto = idConcepto;
-    }
 }
