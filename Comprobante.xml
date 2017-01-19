@@ -1,53 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nomina="http://www.sat.gob.mx/nomina" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" certificado="Certificado" descuento="1" fecha="2017-01-17T01:08:04" folio="Folio" formaDePago="En una sola exhibición" lugarExpedicion="Lugar" metodoDePago="NA" moneda="MXN" noCertificado="No Certificado" sello="Sello" serie="Serie" subTotal="1" tipoCambio="1" tipoDeComprobante="Tipo" total="1" version="3.2" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd http://www.sat.gob.mx/nomina http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina12.xsd">
+<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:nomina12="http://www.sat.gob.mx/nomina12" xmlns:ns4="http://www.sat.gob.mx/nomina" certificado="Certificado" descuento="1" fecha="2017-01-19T02:40:01" folio="Folio" formaDePago="En una sola exhibición" lugarExpedicion="Lugar" metodoDePago="NA" moneda="MXN" noCertificado="No Certificado" sello="Sello" serie="Serie" subTotal="1" tipoCambio="1" tipoDeComprobante="Tipo" total="1" version="3.2" xsi:schemaLocation="http://www.sat.gob.mx/nomina12 http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina12.xsd">
     <cfdi:complemento>
-        <nomina:nomina tipoNomina="O" version="2.1">
-            <nomina:deducciones totalOtrasDeducciones="100.0">
-                <cfdi:deduccion clave="Clave 1" concepto="Concepto 1" importe="100.0" tipoDeduccion="1">
-                    <cfdi:idDeduccion>1</cfdi:idDeduccion>
-                    <cfdi:idDeducciones>1</cfdi:idDeducciones>
-                </cfdi:deduccion>
-                <cfdi:deduccion clave="Clave 2" concepto="Concepto 2" importe="100.0" tipoDeduccion="1">
-                    <cfdi:idDeduccion>1</cfdi:idDeduccion>
-                    <cfdi:idDeducciones>1</cfdi:idDeducciones>
-                </cfdi:deduccion>
-                <cfdi:idDeducciones>1</cfdi:idDeducciones>
-                <cfdi:idNomina>1</cfdi:idNomina>
-            </nomina:deducciones>
-            <nomina:emisor nombre="UNIVERSIDAD AUTONOMA DE ZACATECAS" rfc="UAZ680906NI4"/>
-            <nomina:entidadSNFC montoRecursoPropio="100.00" origenRecurso="IF">
-                <cfdi:idEntidadSnfc>1</cfdi:idEntidadSnfc>
-                <cfdi:idNomina>1</cfdi:idNomina>
-            </nomina:entidadSNFC>
-            <cfdi:fechaFinalPago>2017-01-17T13:08:04.740-06:00</cfdi:fechaFinalPago>
-            <cfdi:fechaInicialPago>2017-01-17T13:08:04.740-06:00</cfdi:fechaInicialPago>
-            <cfdi:fechaPago>2017-01-17T13:08:04.740-06:00</cfdi:fechaPago>
-            <cfdi:idComprobante>1</cfdi:idComprobante>
-            <cfdi:idNomina>1</cfdi:idNomina>
-            <nomina:numDiasPagados>15.0</nomina:numDiasPagados>
-            <nomina:percepciones totalExento="100.0" totalGravado="100.0" totalJubilacionPensionRetiro="100.0" totalSeparacionIndemnizacion="100.0" totalSueldos="100.0">
-                <cfdi:idNomina>1</cfdi:idNomina>
-                <cfdi:idPercepciones>1</cfdi:idPercepciones>
-                <cfdi:percepcion clave="CLAVE 1" concepto="CONCEPTO 1" importeExento="100.0" importeGravado="100.0" tipoPercepcion="1">
-                    <cfdi:idPercepcion>1</cfdi:idPercepcion>
-                    <cfdi:idPercepciones>1</cfdi:idPercepciones>
-                </cfdi:percepcion>
-                <cfdi:percepcion clave="CLAVE 2" concepto="CONCEPTO 2" importeExento="100.0" importeGravado="100.0" tipoPercepcion="2">
-                    <cfdi:idPercepcion>1</cfdi:idPercepcion>
-                    <cfdi:idPercepciones>1</cfdi:idPercepciones>
-                </cfdi:percepcion>
-            </nomina:percepciones>
-            <nomina:receptor antiguedad="5" banco="5" cuentaBancaria="123456789876543210" curp="BEMH87091223E12345" departamento="CEII" fechaInicioRelacionLaboral="2017-01-17T13:08:04.740-06:00" nombre="BERUMEN MORENO HECTOR" numEmpleado="100" numSeguridadSocial="12345678" periodicidadPago="15" puesto="DOCENTE" rfc="BEMH87091223E" riesgoPuesto="1" salarioBaseCotApor="100.0" salarioDiarioIntegrado="100.0" sindicalizado="1" tipoContrato="3" tipoJornada="3" tipoRegimen="2"/>
-            <nomina:totalDeducciones>100.00</nomina:totalDeducciones>
-            <nomina:totalOtrosPagos>100.00</nomina:totalOtrosPagos>
-            <nomina:totalPercepciones>100.00</nomina:totalPercepciones>
-        </nomina:nomina>
+        <nomina12:nomina fechaFinalPago="2017-01-19T14:40:01.359-06:00" fechaInicialPago="2017-01-19T14:40:01.359-06:00" fechaPago="2017-01-19T14:40:01.359-06:00" numDiasPagados="15.0" tipoNomina="O" totalDeducciones="100.00" totalOtrosPagos="100.00" totalPercepciones="100.00" version="2.1">
+            <nomina12:deducciones totalOtrasDeducciones="100.0">
+                <nomina12:deduccion clave="Clave 1" concepto="Concepto 1" importe="100.0" tipoDeduccion="1"/>
+                <nomina12:deduccion clave="Clave 2" concepto="Concepto 2" importe="100.0" tipoDeduccion="1"/>
+            </nomina12:deducciones>
+            <nomina12:emisor registroPatronal="5525665412"/>
+            <nomina12:entidadSNFC montoRecursoPropio="100.00" origenRecurso="IF"/>
+            <nomina12:percepciones totalExento="100.0" totalGravado="100.0" totalJubilacionPensionRetiro="100.0" totalSeparacionIndemnizacion="100.0" totalSueldos="100.0">
+                <nomina12:percepcion clave="CLAVE 1" concepto="CONCEPTO 1" importeExento="100.0" importeGravado="100.0" tipoPercepcion="1"/>
+                <nomina12:percepcion clave="CLAVE 2" concepto="CONCEPTO 2" importeExento="100.0" importeGravado="100.0" tipoPercepcion="2"/>
+            </nomina12:percepciones>
+            <nomina12:receptor antiguedad="5" banco="5" cuentaBancaria="123456789876543210" curp="BEMH87091223E12345" departamento="CEII" fechaInicioRelacionLaboral="2017-01-19T14:40:01.359-06:00" nombre="BERUMEN MORENO HECTOR" numEmpleado="100" numSeguridadSocial="12345678" periodicidadPago="15" puesto="DOCENTE" rfc="BEMH87091223E" riesgoPuesto="1" salarioBaseCotApor="100.0" salarioDiarioIntegrado="100.0" sindicalizado="1" tipoContrato="3" tipoJornada="3" tipoRegimen="2"/>
+        </nomina12:nomina>
     </cfdi:complemento>
     <cfdi:conceptos>
         <cfdi:concepto cantidad="1" descripcion="Pago nómina" importe="100.00" unidad="ACT" valorUnitario="100.00"/>
     </cfdi:conceptos>
-    <cfdi:emisor nombre="UNIVERSIDAD AUTONOMA DE ZACATECAS" rfc="UAZ680906NI4"/>
+    <cfdi:emisor nombre="UNIVERSIDAD AUTONOMA DE ZACATECAS" rfc="UAZ680906NI4">
+        <cfdi:regimenFiscal regimen="2"/>
+    </cfdi:emisor>
     <cfdi:impuestos/>
     <cfdi:receptor nombre="BERUMEN MORENO HECTOR" rfc="BEMH87091223E"/>
-    <cfdi:regimenFiscal regimen="Personas Morales con Fines no Lucrativos"/>
 </cfdi:Comprobante>

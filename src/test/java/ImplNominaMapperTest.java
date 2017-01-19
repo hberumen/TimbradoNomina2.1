@@ -4,6 +4,7 @@ import me.hberumen.nomina.modelo.*;
 import me.hberumen.nomina.modelo.jtd.*;
 import me.hberumen.nomina.util.Eutil;
 import mx.gob.sat.sitioInternet.cfd.catalogos.CEstado;
+import mx.gob.sat.sitioInternet.cfd.catalogos.CRegimenFiscal;
 import mx.gob.sat.sitioInternet.cfd.catalogos.nomina.*;
 
 import java.math.BigDecimal;
@@ -54,9 +55,9 @@ public class ImplNominaMapperTest implements NominaMapper {
 
     }
 
-    public Nomina getNominaFromIdComprobante(BigInteger idComprobante) {
+    public NominaDb getNominaFromIdComprobante(BigInteger idComprobante) {
 
-        Nomina nomina = new Nomina();
+        NominaDb nomina = new NominaDb();
         nomina.setIdComprobante(Id);
         nomina.setIdNomina(Id);
         nomina.setVersion(Eutil.NOMINA_VERSION.getValor());
@@ -78,17 +79,29 @@ public class ImplNominaMapperTest implements NominaMapper {
         emisor.setIdEmisor(new Integer(1));
         emisor.setRfc("UAZ680906NI4");
         emisor.setNombre("UNIVERSIDAD AUTONOMA DE ZACATECAS");
-        emisor.setRegistroPatronal("H091861410");
+        emisor.setRegistroPatronal(null);
         emisor.setRfcPatronOrigen(null);
 
         return emisor;
 
     }
 
+    public EmisorDb getEmisorActivoNomina() {
+
+        EmisorDb emisor = new EmisorDb();
+        emisor.setIdEmisor(new Integer(1));
+        emisor.setRfc(null);
+        emisor.setNombre(null);
+        emisor.setRegistroPatronal("5525665412");
+        emisor.setRfcPatronOrigen(null);
+
+        return emisor;
+    }
+
     public RegimenFiscalDb getRegimenFiscalPorIdEmisor(int idEmisor) {
 
         RegimenFiscalDb regimenFiscal = new RegimenFiscalDb();
-        regimenFiscal.setRegimen(Eutil.EMISOR_REGIMEN_FISCAL.getValor());
+        regimenFiscal.setRegimen(String.valueOf(CRegimenFiscal.INT_X_603));
         regimenFiscal.setIdEmisor(1);
         regimenFiscal.setIdRegimenFiscal(1);
 
@@ -150,9 +163,9 @@ public class ImplNominaMapperTest implements NominaMapper {
         return concepto;
     }
 
-    public EntidadSNFC seleccionarEntidadSNFCPorIdNomina(BigInteger idNomina) {
+    public EntidadSNFCDb seleccionarEntidadSNFCPorIdNomina(BigInteger idNomina) {
 
-        EntidadSNFC entidadSNFC = new EntidadSNFC();
+        EntidadSNFCDb entidadSNFC = new EntidadSNFCDb();
         entidadSNFC.setIdEntidadSnfc(Id);
         entidadSNFC.setIdNomina(Id);
         entidadSNFC.setOrigenRecurso("IF");
@@ -166,9 +179,9 @@ public class ImplNominaMapperTest implements NominaMapper {
         return null;
     }
 
-    public Percepciones seleccionarPercepcionesPorIdNomina(BigInteger idNomina) {
+    public PercepcionesDb seleccionarPercepcionesPorIdNomina(BigInteger idNomina) {
 
-        Percepciones percepciones = new Percepciones();
+        PercepcionesDb percepciones = new PercepcionesDb();
         percepciones.setIdPercepciones(Id);
         percepciones.setIdNomina(Id);
         percepciones.setTotalSueldos(Dinero);
@@ -180,11 +193,11 @@ public class ImplNominaMapperTest implements NominaMapper {
         return percepciones;
     }
 
-    public List<Percepcion> seleccionarPercepcionPorIdPercepciones(BigInteger idPercepcion) {
+    public List<PercepcionDb> seleccionarPercepcionPorIdPercepciones(BigInteger idPercepcion) {
 
-        List<Percepcion> percepcionList = new ArrayList<Percepcion>();
+        List<PercepcionDb> percepcionList = new ArrayList<PercepcionDb>();
 
-        Percepcion percepcion = new Percepcion();
+        PercepcionDb percepcion = new PercepcionDb();
         percepcion.setIdPercepcion(Id);
         percepcion.setIdPercepciones(Id);
         percepcion.setTipoPercepcion(String.valueOf(CTipoPercepcion.INT_X_001));
@@ -195,7 +208,7 @@ public class ImplNominaMapperTest implements NominaMapper {
 
         percepcionList.add(percepcion);
 
-        percepcion = new Percepcion();
+        percepcion = new PercepcionDb();
         percepcion.setIdPercepcion(Id);
         percepcion.setIdPercepciones(Id);
         percepcion.setTipoPercepcion(String.valueOf(CTipoPercepcion.INT_X_002));
@@ -227,9 +240,9 @@ public class ImplNominaMapperTest implements NominaMapper {
         return null;
     }
 
-    public Deducciones seleccionarDeduccionesPorIdNomina(BigInteger idNomina) {
+    public DeduccionesDb seleccionarDeduccionesPorIdNomina(BigInteger idNomina) {
 
-        Deducciones deducciones = new Deducciones();
+        DeduccionesDb deducciones = new DeduccionesDb();
         deducciones.setIdDeducciones(Id);
         deducciones.setIdNomina(Id);
         deducciones.setTotalOtrasDeducciones(Dinero);
@@ -239,10 +252,10 @@ public class ImplNominaMapperTest implements NominaMapper {
 
     }
 
-    public List<Deduccion> seleccionarDeduccionPorIdDeducciones(BigInteger idDeducciones) {
+    public List<DeduccionDb> seleccionarDeduccionPorIdDeducciones(BigInteger idDeducciones) {
 
-        List<Deduccion> deduccionList = new ArrayList<Deduccion>();
-        Deduccion deduccion = new Deduccion();
+        List<DeduccionDb> deduccionList = new ArrayList<DeduccionDb>();
+        DeduccionDb deduccion = new DeduccionDb();
         deduccion.setIdDeduccion(Id);
         deduccion.setIdDeducciones(Id);
         deduccion.setTipoDeduccion(String.valueOf(CTipoDeduccion.INT_X_001));
@@ -252,7 +265,7 @@ public class ImplNominaMapperTest implements NominaMapper {
 
         deduccionList.add(deduccion);
 
-        deduccion = new Deduccion();
+        deduccion = new DeduccionDb();
         deduccion.setIdDeduccion(Id);
         deduccion.setIdDeducciones(Id);
         deduccion.setTipoDeduccion(String.valueOf(CTipoDeduccion.INT_X_001));

@@ -20,11 +20,14 @@ public class ImplNominaMapper implements NominaMapper {
         return null;
     }
 
-    public Nomina getNominaFromIdComprobante(BigInteger idComprobante) {
+    public NominaDb getNominaFromIdComprobante(BigInteger idComprobante) {
         return null;
     }
 
     public EmisorDb getEmisorActivo() {
+        return null;
+    }
+    public EmisorDb getEmisorActivoNomina() {
         return null;
     }
 
@@ -44,7 +47,7 @@ public class ImplNominaMapper implements NominaMapper {
         return null;
     }
 
-    public EntidadSNFC seleccionarEntidadSNFCPorIdNomina(BigInteger idNomina) {
+    public EntidadSNFCDb seleccionarEntidadSNFCPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
@@ -52,11 +55,11 @@ public class ImplNominaMapper implements NominaMapper {
         return null;
     }
 
-    public Percepciones seleccionarPercepcionesPorIdNomina(BigInteger idNomina) {
+    public PercepcionesDb seleccionarPercepcionesPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
-    public List<Percepcion> seleccionarPercepcionPorIdPercepciones(BigInteger idPercepcion) {
+    public List<PercepcionDb> seleccionarPercepcionPorIdPercepciones(BigInteger idPercepcion) {
         return null;
     }
 
@@ -76,11 +79,11 @@ public class ImplNominaMapper implements NominaMapper {
         return null;
     }
 
-    public Deducciones seleccionarDeduccionesPorIdNomina(BigInteger idNomina) {
+    public DeduccionesDb seleccionarDeduccionesPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
-    public List<Deduccion> seleccionarDeduccionPorIdDeducciones(BigInteger idDeducciones) {
+    public List<DeduccionDb> seleccionarDeduccionPorIdDeducciones(BigInteger idDeducciones) {
         return null;
     }
 

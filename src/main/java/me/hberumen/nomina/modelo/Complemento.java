@@ -14,7 +14,7 @@ public class Complemento {
     public Complemento() {
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina")
+    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
     public Nomina getNomina() {
         return nomina;
     }

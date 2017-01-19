@@ -3,7 +3,7 @@
  */
 @XmlSchema(namespace = "http://www.sat.gob.mx/cfd/3",
         xmlns = {
-                @XmlNs(namespaceURI = "http://www.sat.gob.mx/nomina", prefix = "nomina"),
+                @XmlNs(namespaceURI = "http://www.sat.gob.mx/nomina12", prefix = "nomina12"),
                 @XmlNs(namespaceURI = "http://www.sat.gob.mx/cfd/3", prefix = "cfdi"),
                 @XmlNs(namespaceURI = "http://www.w3.org/2001/XMLSchema-instance", prefix = "xsi")
         },

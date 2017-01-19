@@ -11,8 +11,6 @@ import java.math.BigInteger;
 @XmlRootElement(name = "EntidadSNFC")
 public class EntidadSNFC {
 
-    private BigInteger idEntidadSnfc;
-    private BigInteger idNomina;
     private String origenRecurso;
     private BigDecimal montoRecursoPropio;
 
@@ -39,19 +37,5 @@ public class EntidadSNFC {
         this.montoRecursoPropio = montoRecursoPropio;
     }
 
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
 
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
-
-    public BigInteger getIdEntidadSnfc() {
-        return idEntidadSnfc;
-    }
-
-    public void setIdEntidadSnfc(BigInteger idEntidadSnfc) {
-        this.idEntidadSnfc = idEntidadSnfc;
-    }
 }

@@ -2,13 +2,13 @@ package me.hberumen.nomina.generador;
 
 import me.hberumen.nomina.bd.mappers.NominaMapper;
 import me.hberumen.nomina.modelo.*;
-import me.hberumen.nomina.modelo.jtd.ComprobanteDb;
-import me.hberumen.nomina.modelo.jtd.EmisorDb;
+import me.hberumen.nomina.modelo.jtd.*;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,6 +21,7 @@ public class Generador {
     private Receptor receptor;
     private Complemento complemento;
     private Nomina nomina;
+    private NominaDb nominaDb;
     private NominaMapper nominaMapper;
 
     public Generador(ComprobanteDb comprobante, NominaMapper nominaMapper) {
@@ -31,7 +32,6 @@ public class Generador {
     public void generaCfdiNomina(){
 
         setEmisor();
-        setRegimenFiscal();
         setReceptor();
         setConceptos();
         setImpuestos();
@@ -41,12 +41,13 @@ public class Generador {
     }
 
     private void setComplementoNomina() {
-        nomina = new Nomina();
-        nomina.setIdComprobante(comprobante.getIdComprobante());
+        nominaDb = new NominaDb();
+        nominaDb.setIdComprobante(comprobante.getIdComprobante());
         nomina = nominaMapper.getNominaFromIdComprobante(comprobante.getIdComprobante());
         complemento.setNomina(nomina);
 
-        nomina.setEmisor(emisor);
+        Emisor emisorM = nominaMapper.getEmisorActivoNomina();
+        nomina.setEmisor(emisorM);
         Receptor receptorM = nominaMapper.getReceptorPorIdComprobanteNomina(comprobante.getIdComprobante());
         nomina.setReceptor(receptorM);
 
@@ -61,52 +62,62 @@ public class Generador {
     }
 
     private void setDeduccionesNomina() {
-        Deducciones deducciones = nominaMapper.seleccionarDeduccionesPorIdNomina(nomina.getIdNomina());
-        nomina.setDeducciones(deducciones);
+        DeduccionesDb deducciones = nominaMapper.seleccionarDeduccionesPorIdNomina(nominaDb.getIdNomina());
+        Deducciones deduccionesM = deducciones;
+        nomina.setDeducciones(deduccionesM);
 
-        List<Deduccion> deduccion = nominaMapper.seleccionarDeduccionPorIdDeducciones(deducciones.getIdDeducciones());
-        deducciones.setDeduccion(deduccion);
+        List<DeduccionDb> deduccion = nominaMapper.seleccionarDeduccionPorIdDeducciones(deducciones.getIdDeducciones());
+        List<Deduccion> deduccionList = new ArrayList<Deduccion>();
+        for(Deduccion deduccion1 : deduccion){
+            deduccionList.add(deduccion1);
+        }
+        deducciones.setDeduccion(deduccionList);
 
     }
 
     private void setSeparacionIndemnizacionNomina() {
-        SeparacionIndemnizacion separacionIndemnizacion = nominaMapper.seleccionarSeparacionIndemnizacionPorIdNomina(nomina.getIdNomina());
+        SeparacionIndemnizacion separacionIndemnizacion = nominaMapper.seleccionarSeparacionIndemnizacionPorIdNomina(nominaDb.getIdNomina());
         nomina.setSeparacionIndemnizacion(separacionIndemnizacion);
     }
 
     private void setJubilacionPensionRetiroNomina() {
-        JubilacionPensionRetiro jubilacionPensionRetiro = nominaMapper.seleccionarJubilacionPensionRetiroPorIdNomina(nomina.getIdNomina());
+        JubilacionPensionRetiro jubilacionPensionRetiro = nominaMapper.seleccionarJubilacionPensionRetiroPorIdNomina(nominaDb.getIdNomina());
         nomina.setJubilacionPensionRetiro(jubilacionPensionRetiro);
     }
 
     private void setHorasExtraNomina() {
-        HorasExtra horasExtra = nominaMapper.seleccionarHorasExtraPorIdNomina(nomina.getIdNomina());
+        HorasExtra horasExtra = nominaMapper.seleccionarHorasExtraPorIdNomina(nominaDb.getIdNomina());
         nomina.setHorasExtra(horasExtra);
     }
 
     private void setAccionesOTitulosNomina() {
-        AccionesOTitulos accionesOTitulos = nominaMapper.selecionarAccionesOTitulosPorIdNomina(nomina.getIdNomina());
+        AccionesOTitulos accionesOTitulos = nominaMapper.selecionarAccionesOTitulosPorIdNomina(nominaDb.getIdNomina());
         nomina.setAccionesOTitulos(accionesOTitulos);
     }
 
     private void setPercepcionesNomina() {
-        Percepciones percepciones = nominaMapper.seleccionarPercepcionesPorIdNomina(nomina.getIdNomina());
-        nomina.setPercepciones(percepciones);
+        PercepcionesDb percepciones = nominaMapper.seleccionarPercepcionesPorIdNomina(nominaDb.getIdNomina());
+        Percepciones percepcionesM = percepciones;
+        nomina.setPercepciones(percepcionesM);
 
-        List<Percepcion>  listPercepcion = nominaMapper.seleccionarPercepcionPorIdPercepciones(percepciones.getIdPercepciones());
+        List<PercepcionDb>  listPercepcion = nominaMapper.seleccionarPercepcionPorIdPercepciones(percepciones.getIdPercepciones());
+        List<Percepcion> percepcionList = new ArrayList<Percepcion>();
+        for (Percepcion percepcion : listPercepcion){
+            percepcionList.add(percepcion);
+        }
 
-        percepciones.setPercepcion(listPercepcion);
+        percepciones.setPercepcion(percepcionList);
 
     }
 
     private void setSubContratacionNomina() {
-        SubContratacion subContratacion = nominaMapper.seleccionarSubContratacionPorIdNomina(nomina.getIdNomina());
+        SubContratacion subContratacion = nominaMapper.seleccionarSubContratacionPorIdNomina(nominaDb.getIdNomina());
         nomina.setSubContratacion(subContratacion);
 
     }
 
     private void setEntidadSNFCNomina() {
-        EntidadSNFC entidadSNFCDao = nominaMapper.seleccionarEntidadSNFCPorIdNomina(nomina.getIdNomina());
+        EntidadSNFC entidadSNFCDao = nominaMapper.seleccionarEntidadSNFCPorIdNomina(nominaDb.getIdNomina());
         nomina.setEntidadSNFC(entidadSNFCDao);
     }
 
@@ -136,15 +147,16 @@ public class Generador {
         comprobante.setReceptor(receptorM);
     }
 
-    private void setRegimenFiscal() {
+    private void setRegimenFiscal(Emisor emisorM) {
         RegimenFiscal regimenFiscal = nominaMapper.getRegimenFiscalPorIdEmisor(emisor.getIdEmisor());
-        comprobante.setRegimenFiscal(regimenFiscal);
+        emisorM.setRegimenFiscal(regimenFiscal);
     }
 
     private void setEmisor() {
         emisor = nominaMapper.getEmisorActivo();
         emisor.setRegistroPatronal(null);
         Emisor emisorM = emisor;
+        setRegimenFiscal(emisorM);
         comprobante.setEmisor(emisorM);
     }
 
@@ -157,7 +169,8 @@ public class Generador {
             context = JAXBContext.newInstance(Comprobante.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, Comprobante.SCHEMA_SAT+ Nomina.SCHEMA_NOMINA);
+            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, Comprobante.SCHEMA_SAT);
+            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, Nomina.SCHEMA_NOMINA);
             marshaller.marshal(comprobanteMar, System.out);
             marshaller.marshal(comprobanteMar, new File("Comprobante.xml"));
         } catch (JAXBException e) {

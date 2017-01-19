@@ -18,7 +18,7 @@ public class Emisor {
     private String nombre;
     private String registroPatronal;
     private String rfcPatronOrigen;
-
+    private RegimenFiscal regimenFiscal;
 
 
     public Emisor() {
@@ -61,5 +61,11 @@ public class Emisor {
         this.rfcPatronOrigen = rfcPatronOrigen;
     }
 
+    public RegimenFiscal getRegimenFiscal() {
+        return regimenFiscal;
+    }
 
+    public void setRegimenFiscal(RegimenFiscal regimenFiscal) {
+        this.regimenFiscal = regimenFiscal;
+    }
 }

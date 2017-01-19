@@ -11,8 +11,6 @@ import java.math.BigInteger;
 @XmlRootElement(name="Percepcion")
 public class Percepcion {
 
-    private BigInteger idPercepcion;
-    private BigInteger idPercepciones;
     private String tipoPercepcion;
     private String clave;
     private String concepto;
@@ -67,19 +65,5 @@ public class Percepcion {
         this.importeExento = importeExento;
     }
 
-    public BigInteger getIdPercepcion() {
-        return idPercepcion;
-    }
 
-    public void setIdPercepcion(BigInteger idPercepcion) {
-        this.idPercepcion = idPercepcion;
-    }
-
-    public BigInteger getIdPercepciones() {
-        return idPercepciones;
-    }
-
-    public void setIdPercepciones(BigInteger idPercepciones) {
-        this.idPercepciones = idPercepciones;
-    }
 }

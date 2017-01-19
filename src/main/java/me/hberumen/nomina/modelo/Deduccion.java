@@ -11,8 +11,7 @@ import java.math.BigInteger;
 @XmlRootElement(name="Deduccion")
 public class Deduccion {
 
-    private BigInteger idDeduccion;
-    private BigInteger idDeducciones;
+
     private String tipoDeduccion;
     private String clave;
     private String concepto;
@@ -57,19 +56,5 @@ public class Deduccion {
         this.importe = importe;
     }
 
-    public BigInteger getIdDeduccion() {
-        return idDeduccion;
-    }
 
-    public void setIdDeduccion(BigInteger idDeduccion) {
-        this.idDeduccion = idDeduccion;
-    }
-
-    public BigInteger getIdDeducciones() {
-        return idDeducciones;
-    }
-
-    public void setIdDeducciones(BigInteger idDeducciones) {
-        this.idDeducciones = idDeducciones;
-    }
 }
