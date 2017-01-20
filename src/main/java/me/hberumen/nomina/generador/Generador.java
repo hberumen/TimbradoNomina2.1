@@ -169,8 +169,7 @@ public class Generador {
             context = JAXBContext.newInstance(Comprobante.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
-            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, Comprobante.SCHEMA_SAT);
-            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, Nomina.SCHEMA_NOMINA);
+            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, Comprobante.SCHEMA_SAT + Nomina.SCHEMA_NOMINA);
             marshaller.marshal(comprobanteMar, System.out);
             marshaller.marshal(comprobanteMar, new File("Comprobante.xml"));
         } catch (JAXBException e) {

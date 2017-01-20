@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * Created by hberumen on 25/11/16.
  */
-@XmlRootElement(namespace="http://www.sat.gob.mx/nomina", name="Nomina")
+@XmlRootElement(namespace="http://www.sat.gob.mx/nomina12", name="Nomina")
 public class Nomina {
 
     public static final String SCHEMA_NOMINA = "http://www.sat.gob.mx/nomina12 http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina12.xsd";
