@@ -64,7 +64,7 @@ public class SelloDigital {
     private PrivateKey getPrivateKey() throws GeneralSecurityException, IOException{
 
         FileInputStream fis = new FileInputStream(llave);
-        org.apache.commons.ssl.PKCS8Key pkcs8 =  new org.apache.commons.ssl.PKCS8Key(fis, Config.USUARIOLLAVE.toCharArray());
+        org.apache.commons.ssl.PKCS8Key pkcs8 =  new org.apache.commons.ssl.PKCS8Key(fis, Config.PASS_LLAVE.toCharArray());
         byte[] decrypted = pkcs8.getDecryptedBytes();
         PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(decrypted);
         PrivateKey pk = null;

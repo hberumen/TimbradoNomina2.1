@@ -1,17 +1,10 @@
 import me.hberumen.nomina.bd.mappers.NominaMapper;
 import me.hberumen.nomina.generador.Generador;
-import me.hberumen.nomina.modelo.Complemento;
-import me.hberumen.nomina.modelo.Comprobante;
-import me.hberumen.nomina.modelo.Nomina;
-import me.hberumen.nomina.generador.TimbradoNomina;
 import me.hberumen.nomina.modelo.jtd.ComprobanteDb;
 import me.hberumen.nomina.wsTimbrado.*;
 
 import javax.xml.bind.JAXBException;
 import java.io.File;
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 /**
  * Created by hberumen on 25/11/16.
