@@ -11,8 +11,6 @@ import java.math.BigInteger;
 @XmlRootElement(name="JubilacionPensionRetiro")
 public class JubilacionPensionRetiro {
 
-    private BigInteger idJubilacion;
-    private BigInteger idNomina;
     private BigDecimal totalUnaExhibicion;
     private BigDecimal totalParcialidad;
     private BigDecimal montoDiario;
@@ -22,7 +20,7 @@ public class JubilacionPensionRetiro {
     public JubilacionPensionRetiro() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalUnaExhibicion")
     public BigDecimal getTotalUnaExhibicion() {
         return totalUnaExhibicion;
     }
@@ -31,7 +29,7 @@ public class JubilacionPensionRetiro {
         this.totalUnaExhibicion = totalUnaExhibicion;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalParcialidad")
     public BigDecimal getTotalParcialidad() {
         return totalParcialidad;
     }
@@ -40,7 +38,7 @@ public class JubilacionPensionRetiro {
         this.totalParcialidad = totalParcialidad;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "MontoDiario")
     public BigDecimal getMontoDiario() {
         return montoDiario;
     }
@@ -49,7 +47,7 @@ public class JubilacionPensionRetiro {
         this.montoDiario = montoDiario;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "IngresoAcomulable")
     public BigDecimal getIngresoAcumulable() {
         return ingresoAcumulable;
     }
@@ -58,7 +56,7 @@ public class JubilacionPensionRetiro {
         this.ingresoAcumulable = ingresoAcumulable;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "IngresoNoAcomulable")
     public BigDecimal getIngresoNoAcomulable() {
         return ingresoNoAcomulable;
     }
@@ -67,19 +65,5 @@ public class JubilacionPensionRetiro {
         this.ingresoNoAcomulable = ingresoNoAcomulable;
     }
 
-    public BigInteger getIdJubilacion() {
-        return idJubilacion;
-    }
 
-    public void setIdJubilacion(BigInteger idJubilacion) {
-        this.idJubilacion = idJubilacion;
-    }
-
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
-
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
 }

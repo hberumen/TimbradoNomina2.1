@@ -20,7 +20,7 @@ public class Percepcion {
     public Percepcion() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoPercepcion")
     public String getTipoPercepcion() {
         return tipoPercepcion;
     }
@@ -29,7 +29,7 @@ public class Percepcion {
         this.tipoPercepcion = tipoPercepcion;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Clave")
     public String getClave() {
         return clave;
     }
@@ -38,7 +38,7 @@ public class Percepcion {
         this.clave = clave;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Concepto")
     public String getConcepto() {
         return concepto;
     }
@@ -47,7 +47,7 @@ public class Percepcion {
         this.concepto = concepto;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "ImporteGravado")
     public BigDecimal getImporteGravado() {
         return importeGravado;
     }
@@ -56,7 +56,7 @@ public class Percepcion {
         this.importeGravado = importeGravado;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "ImporteExento")
     public BigDecimal getImporteExento() {
         return importeExento;
     }

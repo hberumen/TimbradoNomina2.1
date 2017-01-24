@@ -20,7 +20,7 @@ public class Deduccion {
     public Deduccion() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoDeduccion")
     public String getTipoDeduccion() {
         return tipoDeduccion;
     }
@@ -29,7 +29,7 @@ public class Deduccion {
         this.tipoDeduccion = tipoDeduccion;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Clave")
     public String getClave() {
         return clave;
     }
@@ -38,7 +38,7 @@ public class Deduccion {
         this.clave = clave;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Concepto")
     public String getConcepto() {
         return concepto;
     }
@@ -47,7 +47,7 @@ public class Deduccion {
         this.concepto = concepto;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Importe")
     public BigDecimal getImporte() {
         return importe;
     }

@@ -1,7 +1,7 @@
 package me.hberumen.nomina.modelo;
 
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+
+import javax.xml.bind.annotation.*;
 import java.math.BigDecimal;
 
 
@@ -9,10 +9,10 @@ import java.math.BigDecimal;
  * Created by hberumen on 25/11/16.
  */
 @XmlRootElement(namespace = "http://www.sat.gob.mx/cfd/3", name="Comprobante")
+@XmlType(propOrder = {"emisor", "receptor", "conceptos", "impuestos", "complemento"})
 public class Comprobante {
 
     public static final String SCHEMA_SAT = "http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd ";
-
 
     private String version;
     private String serie;
@@ -32,7 +32,6 @@ public class Comprobante {
     private String lugarExpedicion;
 
     private Emisor emisor;
-    private RegimenFiscal regimenFiscal;
     private Receptor receptor;
     private Conceptos conceptos;
     private Impuestos impuestos;
@@ -42,7 +41,7 @@ public class Comprobante {
 
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="version")
     public String getVersion() {
         return version;
     }
@@ -51,7 +50,7 @@ public class Comprobante {
         this.version = version;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="serie")
     public String getSerie() {
         return serie;
     }
@@ -60,7 +59,7 @@ public class Comprobante {
         this.serie = serie;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="folio")
     public String getFolio() {
         return folio;
     }
@@ -69,7 +68,7 @@ public class Comprobante {
         this.folio = folio;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="fecha")
     public String getFecha() {
         return fecha;
     }
@@ -78,7 +77,7 @@ public class Comprobante {
         this.fecha = fecha;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="sello")
     public String getSello() {
         return sello;
     }
@@ -87,7 +86,7 @@ public class Comprobante {
         this.sello = sello;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="formaDePago")
     public String getFormaDePago() {
         return formaDePago;
     }
@@ -96,7 +95,7 @@ public class Comprobante {
         this.formaDePago = formaDePago;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="noCertificado")
     public String getNoCertificado() {
         return noCertificado;
     }
@@ -105,7 +104,7 @@ public class Comprobante {
         this.noCertificado = noCertificado;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="certificado")
     public String getCertificado() {
         return certificado;
     }
@@ -114,7 +113,7 @@ public class Comprobante {
         this.certificado = certificado;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="subTotal")
     public BigDecimal getSubTotal() {
         return subTotal;
     }
@@ -123,7 +122,7 @@ public class Comprobante {
         this.subTotal = subTotal;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="descuento")
     public BigDecimal getDescuento() {
         return descuento;
     }
@@ -132,7 +131,7 @@ public class Comprobante {
         this.descuento = descuento;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="TipoCambio")
     public String getTipoCambio() {
         return tipoCambio;
     }
@@ -141,7 +140,7 @@ public class Comprobante {
         this.tipoCambio = tipoCambio;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="Moneda")
     public String getMoneda() {
         return moneda;
     }
@@ -150,7 +149,7 @@ public class Comprobante {
         this.moneda = moneda;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="total")
     public BigDecimal getTotal() {
         return total;
     }
@@ -159,7 +158,7 @@ public class Comprobante {
         this.total = total;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="tipoDeComprobante")
     public String getTipoDeComprobante() {
         return tipoDeComprobante;
     }
@@ -168,7 +167,7 @@ public class Comprobante {
         this.tipoDeComprobante = tipoDeComprobante;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="metodoDePago")
     public String getMetodoDePago() {
         return metodoDePago;
     }
@@ -177,7 +176,7 @@ public class Comprobante {
         this.metodoDePago = metodoDePago;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="LugarExpedicion")
     public String getLugarExpedicion() {
         return lugarExpedicion;
     }
@@ -186,7 +185,7 @@ public class Comprobante {
         this.lugarExpedicion = lugarExpedicion;
     }
 
-
+    @XmlElement(name = "Emisor")
     public Emisor getEmisor() {
         return emisor;
     }
@@ -195,16 +194,7 @@ public class Comprobante {
         this.emisor = emisor;
     }
 
-
-    public RegimenFiscal getRegimenFiscal() {
-        return regimenFiscal;
-    }
-
-    public void setRegimenFiscal(RegimenFiscal regimenFiscal) {
-        this.regimenFiscal = regimenFiscal;
-    }
-
-
+    @XmlElement(name = "Receptor")
     public Receptor getReceptor() {
         return receptor;
     }
@@ -213,7 +203,7 @@ public class Comprobante {
         this.receptor = receptor;
     }
 
-
+    @XmlElement(name = "Conceptos")
     public Conceptos getConceptos() {
         return conceptos;
     }
@@ -222,7 +212,7 @@ public class Comprobante {
         this.conceptos = conceptos;
     }
 
-
+    @XmlElement(name = "Impuestos")
     public Impuestos getImpuestos() {
         return impuestos;
     }
@@ -231,6 +221,7 @@ public class Comprobante {
         this.impuestos = impuestos;
     }
 
+    @XmlElement(name = "Complemento")
     public Complemento getComplemento() {
         return complemento;
     }

@@ -3,14 +3,17 @@ import me.hberumen.nomina.bd.mappers.NominaMapper;
 import me.hberumen.nomina.modelo.*;
 import me.hberumen.nomina.modelo.jtd.*;
 import me.hberumen.nomina.util.Eutil;
+import mx.gob.sat.sitioInternet.cfd.catalogos.CCodigoPostal;
 import mx.gob.sat.sitioInternet.cfd.catalogos.CEstado;
 import mx.gob.sat.sitioInternet.cfd.catalogos.CRegimenFiscal;
 import mx.gob.sat.sitioInternet.cfd.catalogos.nomina.*;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -41,14 +44,14 @@ public class ImplNominaMapperTest implements NominaMapper {
         comprobante.setFormaDePago(Eutil.COMPROBANTE_FORMA_DE_PAGO.getValor());
         comprobante.setNoCertificado("No Certificado");
         comprobante.setCertificado("Certificado");
-        comprobante.setSubTotal(new BigDecimal(1));
+        comprobante.setSubTotal(new BigDecimal(100));
         comprobante.setDescuento(new BigDecimal(1));
         comprobante.setTipoCambio(Eutil.COMPROBANTE_TIPO_CAMBIO.getValor());
         comprobante.setMoneda(Eutil.COMPROBANTE_MONEDA.getValor());
-        comprobante.setTotal(new BigDecimal(1));
-        comprobante.setTipoDeComprobante("Tipo");
+        comprobante.setTotal(new BigDecimal(99));
+        comprobante.setTipoDeComprobante(Eutil.COMPROBANTE_TIPO_COMPROBANTE.getValor());
         comprobante.setMetodoDePago(Eutil.COMPROBANTE_METODO_DE_PAGO.getValor());
-        comprobante.setLugarExpedicion("Lugar");
+        comprobante.setLugarExpedicion("98600");
         comprobanteList.add(comprobante);
 
         return comprobanteList;
@@ -58,17 +61,28 @@ public class ImplNominaMapperTest implements NominaMapper {
     public NominaDb getNominaFromIdComprobante(BigInteger idComprobante) {
 
         NominaDb nomina = new NominaDb();
-        nomina.setIdComprobante(Id);
-        nomina.setIdNomina(Id);
-        nomina.setVersion(Eutil.NOMINA_VERSION.getValor());
-        nomina.setTipoNomina(ORDINARIA);
-        nomina.setFechaPago(new Date());
-        nomina.setFechaInicialPago(new Date());
-        nomina.setFechaFinalPago(new Date());
-        nomina.setNumDiasPagados(15.0);
-        nomina.setTotalPercepciones(new BigDecimal("100.00"));
-        nomina.setTotalDeducciones(new BigDecimal("100.00"));
-        nomina.setTotalOtrosPagos(new BigDecimal("100.00"));
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar fecha = Calendar.getInstance();
+        Calendar fechaf = Calendar.getInstance();
+        try {
+            fecha.setTime(sdf.parse("2017-01-01"));
+            fechaf.setTime(sdf.parse("2017-01-15"));
+
+            nomina.setIdComprobante(Id);
+            nomina.setIdNomina(Id);
+            nomina.setVersion(Eutil.NOMINA_VERSION.getValor());
+            nomina.setTipoNomina(ORDINARIA);
+            nomina.setFechaPago(sdf.format(new Date()));
+            nomina.setFechaInicialPago(sdf.format(fecha.getTime()));
+            nomina.setFechaFinalPago(sdf.format(fechaf.getTime()));
+            nomina.setNumDiasPagados(3.141);
+            nomina.setTotalPercepciones(new BigDecimal("100.00"));
+            nomina.setTotalDeducciones(new BigDecimal("1"));
+            nomina.setTotalOtrosPagos(new BigDecimal("0"));
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
 
         return nomina;
     }
@@ -77,8 +91,8 @@ public class ImplNominaMapperTest implements NominaMapper {
 
         EmisorDb emisor = new EmisorDb();
         emisor.setIdEmisor(new Integer(1));
-        emisor.setRfc("UAZ680906NI4");
-        emisor.setNombre("UNIVERSIDAD AUTONOMA DE ZACATECAS");
+        emisor.setRfc("TGF680906TR$");
+        emisor.setNombre("EMPRESA VIP");
         emisor.setRegistroPatronal(null);
         emisor.setRfcPatronOrigen(null);
 
@@ -101,7 +115,7 @@ public class ImplNominaMapperTest implements NominaMapper {
     public RegimenFiscalDb getRegimenFiscalPorIdEmisor(int idEmisor) {
 
         RegimenFiscalDb regimenFiscal = new RegimenFiscalDb();
-        regimenFiscal.setRegimen(String.valueOf(CRegimenFiscal.INT_X_603));
+        regimenFiscal.setRegimen("603");
         regimenFiscal.setIdEmisor(1);
         regimenFiscal.setIdRegimenFiscal(1);
 
@@ -113,38 +127,44 @@ public class ImplNominaMapperTest implements NominaMapper {
         ReceptorDb receptor = new ReceptorDb();
         receptor.setIdReceptor(Id);
         receptor.setIdComprobante(Id);
-        receptor.setRfc("BEMH87091223E");
-        receptor.setNombre("BERUMEN MORENO HECTOR");
+        receptor.setRfc("YFGH67120176A");
+        receptor.setNombre("RAMON RAMIREZ");
 
 
         return receptor;
     }
 
     public ReceptorDb getReceptorPorIdComprobanteNomina(BigInteger idComprobante) {
-
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar fecha = Calendar.getInstance();
+        try {
+            fecha.setTime(sdf.parse("2012-08-30"));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         ReceptorDb receptor = new ReceptorDb();
         receptor.setIdReceptor(Id);
         receptor.setIdComprobante(Id);
-        receptor.setRfc("BEMH87091223E");
-        receptor.setNombre("BERUMEN MORENO HECTOR");
-        receptor.setCurp("BEMH87091223E12345");
+        receptor.setRfc(null);
+        receptor.setNombre(null);
+        receptor.setCurp("MASM020203MDFRNTA6");
         receptor.setNumSeguridadSocial("12345678");
-        receptor.setFechaInicioRelacionLaboral(new Date());
-        receptor.setAntiguedad("5");
-        receptor.setTipoContrato(String.valueOf(INT_X_03));
-        receptor.setSindicalizado(1);
-        receptor.setTipoJornada(String.valueOf(CTipoJornada.INT_X_01));
-        receptor.setTipoRegimen(String.valueOf(CTipoRegimen.INT_X_02));
+        receptor.setFechaInicioRelacionLaboral(sdf.format(fecha.getTime()));
+        receptor.setAntiguedad("P228W");
+        receptor.setTipoContrato("01");
+        receptor.setSindicalizado("Sí");
+        receptor.setTipoJornada("02");
+        receptor.setTipoRegimen("03");
         receptor.setNumEmpleado("100");
         receptor.setDepartamento("CEII");
         receptor.setPuesto("DOCENTE");
         receptor.setRiesgoPuesto(String.valueOf(CRiesgoPuesto.INT_X_1));
-        receptor.setPeriodicidadPago("15");
-        receptor.setBanco(String.valueOf(CBanco.INT_X_014));
-        receptor.setCuentaBancaria("123456789876543210");
+        receptor.setPeriodicidadPago("04");
+        receptor.setBanco("014");
+        receptor.setCuentaBancaria("4524347700");
         receptor.setSalarioBaseCotApor(new BigDecimal("100.0"));
         receptor.setSalarioDiarioIntegrado(new BigDecimal("100.0"));
-        receptor.setClaveEntFed(String.valueOf(CEstado.INT_ZAC));
+        receptor.setClaveEntFed("ZAC");
 
         return receptor;
     }
@@ -168,8 +188,8 @@ public class ImplNominaMapperTest implements NominaMapper {
         EntidadSNFCDb entidadSNFC = new EntidadSNFCDb();
         entidadSNFC.setIdEntidadSnfc(Id);
         entidadSNFC.setIdNomina(Id);
-        entidadSNFC.setOrigenRecurso("IF");
-        entidadSNFC.setMontoRecursoPropio(new BigDecimal("100.00"));
+        entidadSNFC.setOrigenRecurso("IM");
+        entidadSNFC.setMontoRecursoPropio(new BigDecimal("10"));
 
         return entidadSNFC;
     }
@@ -185,10 +205,11 @@ public class ImplNominaMapperTest implements NominaMapper {
         percepciones.setIdPercepciones(Id);
         percepciones.setIdNomina(Id);
         percepciones.setTotalSueldos(Dinero);
-        percepciones.setTotalSeparacionIndemnizacion(Dinero);
-        percepciones.setTotalJubilacionPensionRetiro(Dinero);
-        percepciones.setTotalGravado(Dinero);
+        percepciones.setTotalSeparacionIndemnizacion(null);
+        percepciones.setTotalJubilacionPensionRetiro(null);
+        percepciones.setTotalGravado(new BigDecimal("0"));
         percepciones.setTotalExento(Dinero);
+
 
         return percepciones;
     }
@@ -200,22 +221,22 @@ public class ImplNominaMapperTest implements NominaMapper {
         PercepcionDb percepcion = new PercepcionDb();
         percepcion.setIdPercepcion(Id);
         percepcion.setIdPercepciones(Id);
-        percepcion.setTipoPercepcion(String.valueOf(CTipoPercepcion.INT_X_001));
-        percepcion.setClave("CLAVE 1");
+        percepcion.setTipoPercepcion("001");
+        percepcion.setClave("001");
         percepcion.setConcepto("CONCEPTO 1");
-        percepcion.setImporteGravado(Dinero);
-        percepcion.setImporteExento(Dinero);
+        percepcion.setImporteGravado(new BigDecimal("0"));
+        percepcion.setImporteExento(new BigDecimal("50"));
 
         percepcionList.add(percepcion);
 
         percepcion = new PercepcionDb();
         percepcion.setIdPercepcion(Id);
         percepcion.setIdPercepciones(Id);
-        percepcion.setTipoPercepcion(String.valueOf(CTipoPercepcion.INT_X_002));
-        percepcion.setClave("CLAVE 2");
+        percepcion.setTipoPercepcion("001");
+        percepcion.setClave("002");
         percepcion.setConcepto("CONCEPTO 2");
-        percepcion.setImporteGravado(Dinero);
-        percepcion.setImporteExento(Dinero);
+        percepcion.setImporteGravado(new BigDecimal("0"));
+        percepcion.setImporteExento(new BigDecimal("50"));
 
         percepcionList.add(percepcion);
 
@@ -245,8 +266,8 @@ public class ImplNominaMapperTest implements NominaMapper {
         DeduccionesDb deducciones = new DeduccionesDb();
         deducciones.setIdDeducciones(Id);
         deducciones.setIdNomina(Id);
-        deducciones.setTotalOtrasDeducciones(Dinero);
-        deducciones.setTotalImpuestosRetenidos(Dinero);
+        deducciones.setTotalOtrasDeducciones(new BigDecimal("0"));
+        deducciones.setTotalImpuestosRetenidos(new BigDecimal("1"));
 
         return deducciones;
 
@@ -258,20 +279,11 @@ public class ImplNominaMapperTest implements NominaMapper {
         DeduccionDb deduccion = new DeduccionDb();
         deduccion.setIdDeduccion(Id);
         deduccion.setIdDeducciones(Id);
-        deduccion.setTipoDeduccion(String.valueOf(CTipoDeduccion.INT_X_001));
-        deduccion.setClave("Clave 1");
+        deduccion.setTipoDeduccion("002");
+        deduccion.setClave("001");
         deduccion.setConcepto("Concepto 1");
-        deduccion.setImporte(Dinero);
+        deduccion.setImporte(new BigDecimal("1"));
 
-        deduccionList.add(deduccion);
-
-        deduccion = new DeduccionDb();
-        deduccion.setIdDeduccion(Id);
-        deduccion.setIdDeducciones(Id);
-        deduccion.setTipoDeduccion(String.valueOf(CTipoDeduccion.INT_X_001));
-        deduccion.setClave("Clave 2");
-        deduccion.setConcepto("Concepto 2");
-        deduccion.setImporte(Dinero);
 
         deduccionList.add(deduccion);
 

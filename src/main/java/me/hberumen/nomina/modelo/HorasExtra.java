@@ -11,8 +11,6 @@ import java.math.BigInteger;
 @XmlRootElement(name="HorasExtra")
 public class HorasExtra {
 
-    private BigInteger idHorasExtra;
-    private BigInteger idNomina;
     private Integer dias;
     private String tipoHoras;
     private Integer horasExtra;
@@ -22,7 +20,7 @@ public class HorasExtra {
     public HorasExtra() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Dias")
     public Integer getDias() {
         return dias;
     }
@@ -31,7 +29,7 @@ public class HorasExtra {
         this.dias = dias;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoHoras")
     public String getTipoHoras() {
         return tipoHoras;
     }
@@ -40,7 +38,7 @@ public class HorasExtra {
         this.tipoHoras = tipoHoras;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "HorasExtra")
     public Integer getHorasExtra() {
         return horasExtra;
     }
@@ -49,7 +47,7 @@ public class HorasExtra {
         this.horasExtra = horasExtra;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "ImportePagado")
     public BigDecimal getImportePagado() {
         return importePagado;
     }
@@ -58,19 +56,4 @@ public class HorasExtra {
         this.importePagado = importePagado;
     }
 
-    public BigInteger getIdHorasExtra() {
-        return idHorasExtra;
-    }
-
-    public void setIdHorasExtra(BigInteger idHorasExtra) {
-        this.idHorasExtra = idHorasExtra;
-    }
-
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
-
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
 }

@@ -25,7 +25,7 @@ public class Percepciones {
     public Percepciones() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalSueldos")
     public BigDecimal getTotalSueldos() {
         return totalSueldos;
     }
@@ -34,7 +34,7 @@ public class Percepciones {
         this.totalSueldos = totalSueldos;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalSeparacionIndemnizacion")
     public BigDecimal getTotalSeparacionIndemnizacion() {
         return totalSeparacionIndemnizacion;
     }
@@ -43,7 +43,7 @@ public class Percepciones {
         this.totalSeparacionIndemnizacion = totalSeparacionIndemnizacion;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalJubilacionPensionRetiro")
     public BigDecimal getTotalJubilacionPensionRetiro() {
         return totalJubilacionPensionRetiro;
     }
@@ -52,7 +52,7 @@ public class Percepciones {
         this.totalJubilacionPensionRetiro = totalJubilacionPensionRetiro;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalGravado")
     public BigDecimal getTotalGravado() {
         return totalGravado;
     }
@@ -61,7 +61,7 @@ public class Percepciones {
         this.totalGravado = totalGravado;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalExento")
     public BigDecimal getTotalExento() {
         return totalExento;
     }
@@ -70,7 +70,7 @@ public class Percepciones {
         this.totalExento = totalExento;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "Percepcion", namespace="http://www.sat.gob.mx/nomina12")
     public List<Percepcion> getPercepcion() {
         return percepcion;
     }

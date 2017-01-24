@@ -11,14 +11,12 @@ import java.math.BigInteger;
 @XmlRootElement(name="SubsidioAlEmpleo")
 public class SubsidioAlEmpleo {
 
-    private BigInteger idSubsidio;
-    private BigInteger idNomina;
     private BigDecimal  subsidioCausado;
 
     public SubsidioAlEmpleo() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "SubsidioCausado")
     public BigDecimal getSubsidioCausado() {
         return subsidioCausado;
     }
@@ -27,19 +25,5 @@ public class SubsidioAlEmpleo {
         this.subsidioCausado = subsidioCausado;
     }
 
-    public BigInteger getIdSubsidio() {
-        return idSubsidio;
-    }
 
-    public void setIdSubsidio(BigInteger idSubsidio) {
-        this.idSubsidio = idSubsidio;
-    }
-
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
-
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
 }

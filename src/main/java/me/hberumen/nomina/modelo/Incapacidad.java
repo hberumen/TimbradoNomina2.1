@@ -11,8 +11,6 @@ import java.math.BigInteger;
 @XmlRootElement(name="Incapacidad")
 public class Incapacidad {
 
-    private BigInteger idIncapacidad;
-    private BigInteger idNomina;
     private Integer diasIncapacidad;
     private String tipoIncapacidad;
     private BigDecimal importeMonetario;
@@ -21,7 +19,7 @@ public class Incapacidad {
 
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "DiasIncapacidad")
     public Integer getDiasIncapacidad() {
         return diasIncapacidad;
     }
@@ -30,7 +28,7 @@ public class Incapacidad {
         this.diasIncapacidad = diasIncapacidad;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoIncapacidad")
     public String getTipoIncapacidad() {
         return tipoIncapacidad;
     }
@@ -39,7 +37,7 @@ public class Incapacidad {
         this.tipoIncapacidad = tipoIncapacidad;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "ImporteMonetario")
     public BigDecimal getImporteMonetario() {
         return importeMonetario;
     }
@@ -48,19 +46,5 @@ public class Incapacidad {
         this.importeMonetario = importeMonetario;
     }
 
-    public BigInteger getIdIncapacidad() {
-        return idIncapacidad;
-    }
 
-    public void setIdIncapacidad(BigInteger idIncapacidad) {
-        this.idIncapacidad = idIncapacidad;
-    }
-
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
-
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
 }

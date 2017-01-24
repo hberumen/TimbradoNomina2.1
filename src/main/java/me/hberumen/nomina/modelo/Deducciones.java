@@ -21,7 +21,7 @@ public class Deducciones {
     public Deducciones() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalOtrasDeducciones")
     public BigDecimal getTotalOtrasDeducciones() {
         return totalOtrasDeducciones;
     }
@@ -30,16 +30,7 @@ public class Deducciones {
         this.totalOtrasDeducciones = totalOtrasDeducciones;
     }
 
-    @XmlAttribute
-    public BigDecimal getTotalImpuestosRetenidos() {
-        return totalImpuestosRetenidos;
-    }
-
-    public void setTotalImpuestosRetenidos(BigDecimal totalImpuestosRetenidos) {
-        totalImpuestosRetenidos = totalImpuestosRetenidos;
-    }
-
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "Deduccion", namespace="http://www.sat.gob.mx/nomina12")
     public List<Deduccion> getDeduccion() {
         return deduccion;
     }
@@ -48,5 +39,12 @@ public class Deducciones {
         this.deduccion = deduccion;
     }
 
+    @XmlAttribute(name = "TotalImpuestosRetenidos")
+    public BigDecimal getTotalImpuestosRetenidos() {
+        return totalImpuestosRetenidos;
+    }
 
+    public void setTotalImpuestosRetenidos(BigDecimal totalImpuestosRetenidos) {
+        this.totalImpuestosRetenidos = totalImpuestosRetenidos;
+    }
 }

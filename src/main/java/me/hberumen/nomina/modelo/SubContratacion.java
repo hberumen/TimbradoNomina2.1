@@ -10,15 +10,13 @@ import java.math.BigInteger;
 @XmlRootElement(name = "SubContratacion")
 public class SubContratacion {
 
-    private BigInteger idSubcontratacion;
-    private BigInteger idNomina;
     private String rfcLabora;
     private String porcentajeTiempo;
 
     public SubContratacion() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="RfcLabora")
     public String getRfcLabora() {
         return rfcLabora;
     }
@@ -27,7 +25,7 @@ public class SubContratacion {
         this.rfcLabora = rfcLabora;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="PorcentajeTiempo")
     public String getPorcentajeTiempo() {
         return porcentajeTiempo;
     }
@@ -36,19 +34,4 @@ public class SubContratacion {
         this.porcentajeTiempo = porcentajeTiempo;
     }
 
-    public BigInteger getIdSubcontratacion() {
-        return idSubcontratacion;
-    }
-
-    public void setIdSubcontratacion(BigInteger idSubcontratacion) {
-        this.idSubcontratacion = idSubcontratacion;
-    }
-
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
-
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
 }

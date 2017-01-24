@@ -21,7 +21,7 @@ public class Concepto {
     public Concepto() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "cantidad")
     public Integer getCantidad() {
         return cantidad;
     }
@@ -30,7 +30,7 @@ public class Concepto {
         this.cantidad = cantidad;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "unidad")
     public String getUnidad() {
         return unidad;
     }
@@ -39,7 +39,7 @@ public class Concepto {
         this.unidad = unidad;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "descripcion")
     public String getDescripcion() {
         return descripcion;
     }
@@ -48,7 +48,7 @@ public class Concepto {
         this.descripcion = descripcion;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "valorUnitario")
     public BigDecimal getValorUnitario() {
         return valorUnitario;
     }
@@ -57,7 +57,7 @@ public class Concepto {
         this.valorUnitario = valorUnitario;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "importe")
     public BigDecimal getImporte() {
         return importe;
     }

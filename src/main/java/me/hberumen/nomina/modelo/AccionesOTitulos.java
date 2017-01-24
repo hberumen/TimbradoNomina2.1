@@ -11,15 +11,13 @@ import java.math.BigInteger;
 @XmlRootElement(name="AccionesOTitulos")
 public class AccionesOTitulos {
 
-    private BigInteger idAcciones;
-    private BigInteger idNomina;
     private BigDecimal valorMercado;
     private BigDecimal precioAlOtorgarse;
 
     public AccionesOTitulos() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "ValorMercado")
     public BigDecimal getValorMercado() {
         return valorMercado;
     }
@@ -28,7 +26,7 @@ public class AccionesOTitulos {
         this.valorMercado = valorMercado;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "PrecioAlOtorgarse")
     public BigDecimal getPrecioAlOtorgarse() {
         return precioAlOtorgarse;
     }
@@ -37,19 +35,5 @@ public class AccionesOTitulos {
         this.precioAlOtorgarse = precioAlOtorgarse;
     }
 
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
 
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
-
-    public BigInteger getIdAcciones() {
-        return idAcciones;
-    }
-
-    public void setIdAcciones(BigInteger idAcciones) {
-        this.idAcciones = idAcciones;
-    }
 }

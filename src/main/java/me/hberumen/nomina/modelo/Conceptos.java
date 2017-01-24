@@ -1,6 +1,7 @@
 package me.hberumen.nomina.modelo;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -15,7 +16,7 @@ public class Conceptos {
         concepto = new Concepto();
     }
 
-
+    @XmlElement(name = "Concepto")
     public Concepto getConcepto() {
         return concepto;
     }

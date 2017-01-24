@@ -11,8 +11,6 @@ import java.math.BigInteger;
 @XmlRootElement(name="OtroPago")
 public class OtroPago {
 
-    private BigInteger idOtroPago;
-    private BigInteger idNomina;
     private String tipoOtroPago;
     private String clave;
     private String concepto;
@@ -21,7 +19,7 @@ public class OtroPago {
     public OtroPago() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoOtroPago")
     public String getTipoOtroPago() {
         return tipoOtroPago;
     }
@@ -30,7 +28,7 @@ public class OtroPago {
         this.tipoOtroPago = tipoOtroPago;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Clave")
     public String getClave() {
         return clave;
     }
@@ -39,7 +37,7 @@ public class OtroPago {
         this.clave = clave;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Concepto")
     public String getConcepto() {
         return concepto;
     }
@@ -48,7 +46,7 @@ public class OtroPago {
         this.concepto = concepto;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Importe")
     public BigDecimal getImporte() {
         return importe;
     }
@@ -57,19 +55,4 @@ public class OtroPago {
         this.importe = importe;
     }
 
-    public BigInteger getIdOtroPago() {
-        return idOtroPago;
-    }
-
-    public void setIdOtroPago(BigInteger idOtroPago) {
-        this.idOtroPago = idOtroPago;
-    }
-
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
-
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
 }

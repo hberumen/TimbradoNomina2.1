@@ -1,6 +1,7 @@
 package me.hberumen.nomina.modelo;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -17,10 +18,10 @@ public class Receptor {
     private String nombre;
     private String curp;
     private String numSeguridadSocial;
-    private Date fechaInicioRelacionLaboral;
+    private String fechaInicioRelacionLaboral;
     private String antiguedad;
     private String tipoContrato;
-    private Integer sindicalizado;
+    private String sindicalizado;
     private String tipoJornada;
     private String tipoRegimen;
     private String numEmpleado;
@@ -34,12 +35,14 @@ public class Receptor {
     private BigDecimal salarioDiarioIntegrado;
     private String claveEntFed;
 
+    private SubContratacion subContratacion;
+
 
     public Receptor() {
 
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="rfc")
     public String getRfc() {
         return rfc;
     }
@@ -48,7 +51,7 @@ public class Receptor {
         this.rfc = rfc;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="nombre")
     public String getNombre() {
         return nombre;
     }
@@ -57,7 +60,7 @@ public class Receptor {
         this.nombre = nombre;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Curp")
     public String getCurp() {
         return curp;
     }
@@ -66,7 +69,7 @@ public class Receptor {
         this.curp = curp;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "NumSeguridadSocial")
     public String getNumSeguridadSocial() {
         return numSeguridadSocial;
     }
@@ -75,16 +78,16 @@ public class Receptor {
         this.numSeguridadSocial = numSeguridadSocial;
     }
 
-    @XmlAttribute
-    public Date getFechaInicioRelacionLaboral() {
+    @XmlAttribute(name = "FechaInicioRelLaboral")
+    public String getFechaInicioRelacionLaboral() {
         return fechaInicioRelacionLaboral;
     }
 
-    public void setFechaInicioRelacionLaboral(Date fechaInicioRelacionLaboral) {
+    public void setFechaInicioRelacionLaboral(String fechaInicioRelacionLaboral) {
         this.fechaInicioRelacionLaboral = fechaInicioRelacionLaboral;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Antigüedad")
     public String getAntiguedad() {
         return antiguedad;
     }
@@ -93,7 +96,7 @@ public class Receptor {
         this.antiguedad = antiguedad;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoContrato")
     public String getTipoContrato() {
         return tipoContrato;
     }
@@ -102,16 +105,16 @@ public class Receptor {
         this.tipoContrato = tipoContrato;
     }
 
-    @XmlAttribute
-    public Integer getSindicalizado() {
+    @XmlAttribute(name = "Sindicalizado")
+    public String getSindicalizado() {
         return sindicalizado;
     }
 
-    public void setSindicalizado(Integer sindicalizado) {
+    public void setSindicalizado(String sindicalizado) {
         this.sindicalizado = sindicalizado;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoJornada")
     public String getTipoJornada() {
         return tipoJornada;
     }
@@ -120,7 +123,7 @@ public class Receptor {
         this.tipoJornada = tipoJornada;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoRegimen")
     public String getTipoRegimen() {
         return tipoRegimen;
     }
@@ -129,7 +132,7 @@ public class Receptor {
         this.tipoRegimen = tipoRegimen;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "NumEmpleado")
     public String getNumEmpleado() {
         return numEmpleado;
     }
@@ -138,7 +141,7 @@ public class Receptor {
         this.numEmpleado = numEmpleado;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Departamento")
     public String getDepartamento() {
         return departamento;
     }
@@ -147,7 +150,7 @@ public class Receptor {
         this.departamento = departamento;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Puesto")
     public String getPuesto() {
         return puesto;
     }
@@ -156,7 +159,7 @@ public class Receptor {
         this.puesto = puesto;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "RiesgoPuesto")
     public String getRiesgoPuesto() {
         return riesgoPuesto;
     }
@@ -165,7 +168,7 @@ public class Receptor {
         this.riesgoPuesto = riesgoPuesto;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "PeriodicidadPago")
     public String getPeriodicidadPago() {
         return periodicidadPago;
     }
@@ -174,7 +177,7 @@ public class Receptor {
         this.periodicidadPago = periodicidadPago;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Banco")
     public String getBanco() {
         return banco;
     }
@@ -183,7 +186,7 @@ public class Receptor {
         this.banco = banco;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "CuentaBancaria")
     public String getCuentaBancaria() {
         return cuentaBancaria;
     }
@@ -192,7 +195,7 @@ public class Receptor {
         this.cuentaBancaria = cuentaBancaria;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "SalarioBaseCotApor")
     public BigDecimal getSalarioBaseCotApor() {
         return salarioBaseCotApor;
     }
@@ -201,7 +204,7 @@ public class Receptor {
         this.salarioBaseCotApor = salarioBaseCotApor;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "SalarioDiarioIntegrado")
     public BigDecimal getSalarioDiarioIntegrado() {
         return salarioDiarioIntegrado;
     }
@@ -210,14 +213,21 @@ public class Receptor {
         this.salarioDiarioIntegrado = salarioDiarioIntegrado;
     }
 
-    @XmlAttribute
+    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    public SubContratacion getSubContratacion() {
+        return subContratacion;
+    }
+
+    public void setSubContratacion(SubContratacion subContratacion) {
+        this.subContratacion = subContratacion;
+    }
+
+    @XmlAttribute(name = "ClaveEntFed")
     public String getClaveEntFed() {
         return claveEntFed;
     }
 
     public void setClaveEntFed(String claveEntFed) {
-        claveEntFed = claveEntFed;
+        this.claveEntFed = claveEntFed;
     }
-
-
 }

@@ -16,7 +16,7 @@ public class RegimenFiscal {
 
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="Regimen")
     public String getRegimen() {
         return regimen;
     }

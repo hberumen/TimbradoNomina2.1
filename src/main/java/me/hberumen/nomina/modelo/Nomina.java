@@ -3,6 +3,7 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.text.SimpleDateFormat;
@@ -13,18 +14,17 @@ import java.util.Date;
  * Created by hberumen on 25/11/16.
  */
 @XmlRootElement(namespace="http://www.sat.gob.mx/nomina12", name="Nomina")
+@XmlType(propOrder = {"emisor", "receptor", "percepciones", "deducciones", "accionesOTitulos","horasExtra","jubilacionPensionRetiro","separacionIndemnizacion","incapacidades","otrosPagos","subsidioAlEmpleo","compensacionSaldosAFavor"})
 public class Nomina {
 
     public static final String SCHEMA_NOMINA = "http://www.sat.gob.mx/nomina12 http://www.sat.gob.mx/sitio_internet/cfd/nomina/nomina12.xsd";
 
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-mm-dd");
-
 
     private String version;
     private String tipoNomina;
-    private Date fechaPago;
-    private Date fechaInicialPago;
-    private Date fechaFinalPago;
+    private String fechaPago;
+    private String fechaInicialPago;
+    private String fechaFinalPago;
     private Double numDiasPagados;
     private BigDecimal totalPercepciones;
     private BigDecimal totalDeducciones;
@@ -32,8 +32,6 @@ public class Nomina {
 
     private Emisor emisor;
     private Receptor receptor;
-    private EntidadSNFC entidadSNFC;
-    private SubContratacion subContratacion;
     private Percepciones percepciones;
     private AccionesOTitulos accionesOTitulos;
     private HorasExtra horasExtra;
@@ -50,7 +48,7 @@ public class Nomina {
 
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="Version")
     public String getVersion() {
         return version;
     }
@@ -59,7 +57,7 @@ public class Nomina {
         this.version = version;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TipoNomina")
     public String getTipoNomina() {
         return tipoNomina;
     }
@@ -68,34 +66,34 @@ public class Nomina {
         this.tipoNomina = tipoNomina;
     }
 
-    @XmlAttribute
-    public Date getFechaPago() {
+    @XmlAttribute(name = "FechaPago")
+    public String getFechaPago() {
         return fechaPago;
     }
 
-    public void setFechaPago(Date fechaPago) {
+    public void setFechaPago(String fechaPago) {
         this.fechaPago = fechaPago;
     }
 
-    @XmlAttribute
-    public Date getFechaInicialPago() {
+    @XmlAttribute(name = "FechaInicialPago")
+    public String getFechaInicialPago() {
         return fechaInicialPago;
     }
 
-    public void setFechaInicialPago(Date fechaInicialPago) {
+    public void setFechaInicialPago(String fechaInicialPago) {
         this.fechaInicialPago = fechaInicialPago;
     }
 
-    @XmlAttribute
-    public Date getFechaFinalPago() {
+    @XmlAttribute(name = "FechaFinalPago")
+    public String getFechaFinalPago() {
         return fechaFinalPago;
     }
 
-    public void setFechaFinalPago(Date fechaFinalPago) {
+    public void setFechaFinalPago(String fechaFinalPago) {
         this.fechaFinalPago = fechaFinalPago;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "NumDiasPagados")
     public Double getNumDiasPagados() {
         return numDiasPagados;
     }
@@ -104,7 +102,7 @@ public class Nomina {
         this.numDiasPagados = numDiasPagados;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalPercepciones")
     public BigDecimal getTotalPercepciones() {
         return totalPercepciones;
     }
@@ -113,7 +111,7 @@ public class Nomina {
         this.totalPercepciones = totalPercepciones;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalDeducciones")
     public BigDecimal getTotalDeducciones() {
         return totalDeducciones;
     }
@@ -122,7 +120,7 @@ public class Nomina {
         this.totalDeducciones = totalDeducciones;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalOtrosPagos")
     public BigDecimal getTotalOtrosPagos() {
         return totalOtrosPagos;
     }
@@ -131,7 +129,7 @@ public class Nomina {
         this.totalOtrosPagos = totalOtrosPagos;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name="Emisor", namespace="http://www.sat.gob.mx/nomina12")
     public Emisor getEmisor() {
         return emisor;
     }
@@ -140,16 +138,7 @@ public class Nomina {
         this.emisor = emisor;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
-    public EntidadSNFC getEntidadSNFC() {
-        return entidadSNFC;
-    }
-
-    public void setEntidadSNFC(EntidadSNFC entidadSNFC) {
-        this.entidadSNFC = entidadSNFC;
-    }
-
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name="Receptor", namespace="http://www.sat.gob.mx/nomina12")
     public Receptor getReceptor() {
         return receptor;
     }
@@ -158,16 +147,7 @@ public class Nomina {
         this.receptor = receptor;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
-    public SubContratacion getSubContratacion() {
-        return subContratacion;
-    }
-
-    public void setSubContratacion(SubContratacion subContratacion) {
-        this.subContratacion = subContratacion;
-    }
-
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name="Percepciones", namespace="http://www.sat.gob.mx/nomina12")
     public Percepciones getPercepciones() {
         return percepciones;
     }
@@ -176,7 +156,7 @@ public class Nomina {
         this.percepciones = percepciones;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name="AccionesOTitulos", namespace="http://www.sat.gob.mx/nomina12")
     public AccionesOTitulos getAccionesOTitulos() {
         return accionesOTitulos;
     }
@@ -185,7 +165,7 @@ public class Nomina {
         this.accionesOTitulos = accionesOTitulos;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "HorasExtra", namespace="http://www.sat.gob.mx/nomina12")
     public HorasExtra getHorasExtra() {
         return horasExtra;
     }
@@ -194,7 +174,7 @@ public class Nomina {
         this.horasExtra = horasExtra;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "JubilacionPensionRetiro", namespace="http://www.sat.gob.mx/nomina12")
     public JubilacionPensionRetiro getJubilacionPensionRetiro() {
         return jubilacionPensionRetiro;
     }
@@ -203,7 +183,7 @@ public class Nomina {
         this.jubilacionPensionRetiro = jubilacionPensionRetiro;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "SeparacionIndemnizacion", namespace="http://www.sat.gob.mx/nomina12")
     public SeparacionIndemnizacion getSeparacionIndemnizacion() {
         return separacionIndemnizacion;
     }
@@ -212,7 +192,7 @@ public class Nomina {
         this.separacionIndemnizacion = separacionIndemnizacion;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "Deducciones", namespace="http://www.sat.gob.mx/nomina12")
     public Deducciones getDeducciones() {
         return deducciones;
     }
@@ -221,7 +201,7 @@ public class Nomina {
         this.deducciones = deducciones;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "Incapacidades", namespace="http://www.sat.gob.mx/nomina12")
     public Incapacidades getIncapacidades() {
         return incapacidades;
     }
@@ -230,7 +210,7 @@ public class Nomina {
         this.incapacidades = incapacidades;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "OtrosPagos", namespace="http://www.sat.gob.mx/nomina12")
     public OtrosPagos getOtrosPagos() {
         return otrosPagos;
     }
@@ -239,7 +219,7 @@ public class Nomina {
         this.otrosPagos = otrosPagos;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "SubsidioAlEmpleo", namespace="http://www.sat.gob.mx/nomina12")
     public SubsidioAlEmpleo getSubsidioAlEmpleo() {
         return subsidioAlEmpleo;
     }
@@ -248,7 +228,7 @@ public class Nomina {
         this.subsidioAlEmpleo = subsidioAlEmpleo;
     }
 
-    @XmlElement(namespace="http://www.sat.gob.mx/nomina12")
+    @XmlElement(name = "CompensacionSaldosAFavor", namespace="http://www.sat.gob.mx/nomina12")
     public CompensacionSaldosAFavor getCompensacionSaldosAFavor() {
         return compensacionSaldosAFavor;
     }

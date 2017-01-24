@@ -11,18 +11,17 @@ import java.math.BigInteger;
 @XmlRootElement(name="SeparacionIndemnizacion")
 public class SeparacionIndemnizacion {
 
-    private BigInteger idSeparacion;
-    private BigInteger idNomina;
+
     private BigDecimal totalPagado;
     private Integer numAnosServicios;
     private BigDecimal ultimoSueldoMensOrd;
-    private BigDecimal ingresoAcomulado;
-    private BigDecimal ingresoNoAcomulado;
+    private BigDecimal ingresoAcumulable;
+    private BigDecimal ingresoNoAcumulable;
 
     public SeparacionIndemnizacion() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "TotalPagado")
     public BigDecimal getTotalPagado() {
         return totalPagado;
     }
@@ -31,7 +30,7 @@ public class SeparacionIndemnizacion {
         this.totalPagado = totalPagado;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "NumAñosServicio")
     public Integer getNumAnosServicios() {
         return numAnosServicios;
     }
@@ -40,7 +39,7 @@ public class SeparacionIndemnizacion {
         this.numAnosServicios = numAnosServicios;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "UltimoSueldoMensOrd")
     public BigDecimal getUltimoSueldoMensOrd() {
         return ultimoSueldoMensOrd;
     }
@@ -49,37 +48,23 @@ public class SeparacionIndemnizacion {
         this.ultimoSueldoMensOrd = ultimoSueldoMensOrd;
     }
 
-    @XmlAttribute
-    public BigDecimal getIngresoAcomulado() {
-        return ingresoAcomulado;
+    @XmlAttribute(name = "IngresoAcomulable")
+    public BigDecimal getIngresoAcumulable() {
+        return ingresoAcumulable;
     }
 
-    public void setIngresoAcomulado(BigDecimal ingresoAcomulado) {
-        this.ingresoAcomulado = ingresoAcomulado;
+    public void setIngresoAcumulable(BigDecimal ingresoAcomulado) {
+        this.ingresoAcumulable = ingresoAcomulado;
     }
 
-    @XmlAttribute
-    public BigDecimal getIngresoNoAcomulado() {
-        return ingresoNoAcomulado;
+    @XmlAttribute(name = "IngresoNoAcomulable")
+    public BigDecimal getIngresoNoAcumulable() {
+        return ingresoNoAcumulable;
     }
 
-    public void setIngresoNoAcomulado(BigDecimal ingresoNoAcomulado) {
-        this.ingresoNoAcomulado = ingresoNoAcomulado;
+    public void setIngresoNoAcumulable(BigDecimal ingresoNoAcomulado) {
+        this.ingresoNoAcumulable = ingresoNoAcomulado;
     }
 
-    public BigInteger getIdSeparacion() {
-        return idSeparacion;
-    }
 
-    public void setIdSeparacion(BigInteger idSeparacion) {
-        this.idSeparacion = idSeparacion;
-    }
-
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
-
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
 }

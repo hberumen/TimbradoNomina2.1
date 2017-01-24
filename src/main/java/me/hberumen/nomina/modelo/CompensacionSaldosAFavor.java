@@ -11,8 +11,6 @@ import java.math.BigInteger;
 @XmlRootElement(name="CompensacionSaldosAFavor")
 public class CompensacionSaldosAFavor {
 
-    private BigInteger idCompensacion;
-    private BigInteger idNomina;
     private BigDecimal saldoAFavor;
     private Integer ano;
     private BigDecimal remanenteSalFav;
@@ -20,7 +18,7 @@ public class CompensacionSaldosAFavor {
     public CompensacionSaldosAFavor() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "SaldoAFavor")
     public BigDecimal getSaldoAFavor() {
         return saldoAFavor;
     }
@@ -29,7 +27,7 @@ public class CompensacionSaldosAFavor {
         this.saldoAFavor = saldoAFavor;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "Año")
     public Integer getAno() {
         return ano;
     }
@@ -38,7 +36,7 @@ public class CompensacionSaldosAFavor {
         this.ano = ano;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "RemaneteSalFav")
     public BigDecimal getRemanenteSalFav() {
         return remanenteSalFav;
     }
@@ -47,19 +45,5 @@ public class CompensacionSaldosAFavor {
         remanenteSalFav = remanenteSalFav;
     }
 
-    public BigInteger getIdCompensacion() {
-        return idCompensacion;
-    }
 
-    public void setIdCompensacion(BigInteger idCompensacion) {
-        this.idCompensacion = idCompensacion;
-    }
-
-    public BigInteger getIdNomina() {
-        return idNomina;
-    }
-
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
-    }
 }

@@ -1,6 +1,7 @@
 package me.hberumen.nomina.modelo;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
@@ -19,13 +20,14 @@ public class Emisor {
     private String registroPatronal;
     private String rfcPatronOrigen;
     private RegimenFiscal regimenFiscal;
+    private EntidadSNFC entidadSNCF;
 
 
     public Emisor() {
 
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="rfc")
     public String getRfc() {
         return rfc;
     }
@@ -34,7 +36,7 @@ public class Emisor {
         this.rfc = rfc;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name="nombre")
     public String getNombre() {
         return nombre;
     }
@@ -43,7 +45,7 @@ public class Emisor {
         this.nombre = nombre;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "RegistroPatronal")
     public String getRegistroPatronal() {
         return registroPatronal;
     }
@@ -52,7 +54,7 @@ public class Emisor {
         this.registroPatronal = registroPatronal;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "RfcPatronOrigen")
     public String getRfcPatronOrigen() {
         return rfcPatronOrigen;
     }
@@ -61,11 +63,21 @@ public class Emisor {
         this.rfcPatronOrigen = rfcPatronOrigen;
     }
 
+    @XmlElement(name = "RegimenFiscal")
     public RegimenFiscal getRegimenFiscal() {
         return regimenFiscal;
     }
 
     public void setRegimenFiscal(RegimenFiscal regimenFiscal) {
         this.regimenFiscal = regimenFiscal;
+    }
+
+    @XmlElement(name = "EntidadSNCF", namespace="http://www.sat.gob.mx/nomina12")
+    public EntidadSNFC getEntidadSNCF() {
+        return entidadSNCF;
+    }
+
+    public void setEntidadSNCF(EntidadSNFC entidadSNCF) {
+        this.entidadSNCF = entidadSNCF;
     }
 }

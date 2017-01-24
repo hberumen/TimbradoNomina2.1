@@ -19,7 +19,7 @@ public class EntidadSNFC {
     public EntidadSNFC() {
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "OrigenRecurso")
     public String getOrigenRecurso() {
         return origenRecurso;
     }
@@ -28,7 +28,7 @@ public class EntidadSNFC {
         this.origenRecurso = origenRecurso;
     }
 
-    @XmlAttribute
+    @XmlAttribute(name = "MontoRecursoPropio")
     public BigDecimal getMontoRecursoPropio() {
         return montoRecursoPropio;
     }
