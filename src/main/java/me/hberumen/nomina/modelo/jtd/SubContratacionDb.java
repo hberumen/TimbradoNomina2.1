@@ -10,7 +10,7 @@ import java.math.BigInteger;
 public class SubContratacionDb extends SubContratacion {
 
     private BigInteger idSubcontratacion;
-    private BigInteger idNomina;
+    private BigInteger idReceptor;
 
     public SubContratacionDb() {
     }
@@ -23,12 +23,12 @@ public class SubContratacionDb extends SubContratacion {
         this.idSubcontratacion = idSubcontratacion;
     }
 
-    public BigInteger getIdNomina() {
-        return idNomina;
+
+    public BigInteger getIdReceptor() {
+        return idReceptor;
     }
 
-    public void setIdNomina(BigInteger idNomina) {
-        this.idNomina = idNomina;
+    public void setIdReceptor(BigInteger idReceptor) {
+        this.idReceptor = idReceptor;
     }
-
 }
