@@ -1,10 +1,12 @@
 package me.hberumen.nomina.modelo;
 
+import me.hberumen.nomina.adapter.DateAdapter;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
-import java.math.BigInteger;
 import java.util.Date;
 
 /**
@@ -18,7 +20,7 @@ public class Receptor {
     private String nombre;
     private String curp;
     private String numSeguridadSocial;
-    private String fechaInicioRelacionLaboral;
+    private Date fechaInicioRelacionLaboral;
     private String antiguedad;
     private String tipoContrato;
     private String sindicalizado;
@@ -79,11 +81,12 @@ public class Receptor {
     }
 
     @XmlAttribute(name = "FechaInicioRelLaboral")
-    public String getFechaInicioRelacionLaboral() {
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    public Date getFechaInicioRelacionLaboral() {
         return fechaInicioRelacionLaboral;
     }
 
-    public void setFechaInicioRelacionLaboral(String fechaInicioRelacionLaboral) {
+    public void setFechaInicioRelacionLaboral(Date fechaInicioRelacionLaboral) {
         this.fechaInicioRelacionLaboral = fechaInicioRelacionLaboral;
     }
 

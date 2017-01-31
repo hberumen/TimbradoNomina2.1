@@ -3,10 +3,7 @@ import me.hberumen.nomina.bd.mappers.NominaMapper;
 import me.hberumen.nomina.modelo.*;
 import me.hberumen.nomina.modelo.jtd.*;
 import me.hberumen.nomina.util.Eutil;
-import mx.gob.sat.sitioInternet.cfd.catalogos.CCodigoPostal;
-import mx.gob.sat.sitioInternet.cfd.catalogos.CEstado;
-import mx.gob.sat.sitioInternet.cfd.catalogos.CRegimenFiscal;
-import mx.gob.sat.sitioInternet.cfd.catalogos.nomina.*;
+import mx.gob.sat.catalogos.nomina.CTipoNomina;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -16,9 +13,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-
-import static mx.gob.sat.sitioInternet.cfd.catalogos.nomina.CTipoContrato.*;
-import static mx.gob.sat.sitioInternet.cfd.catalogos.nomina.CTipoNomina.*;
 
 
 /**
@@ -31,7 +25,6 @@ public class ImplNominaMapperTest implements NominaMapper {
 
     public List<ComprobanteDb> seleccionarComprobantePorAgrupa(String agrupa) {
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss");
         List<ComprobanteDb> comprobanteList = new ArrayList<ComprobanteDb>();
         ComprobanteDb comprobante = new ComprobanteDb();
 
@@ -39,7 +32,7 @@ public class ImplNominaMapperTest implements NominaMapper {
         comprobante.setVersion(Eutil.COMPROBANTE_VERSION.getValor());
         comprobante.setSerie("Serie");
         comprobante.setFolio("Folio");
-        comprobante.setFecha(sdf.format(new Date()));
+        comprobante.setFecha(new Date());
         comprobante.setSello("Sello");
         comprobante.setFormaDePago(Eutil.COMPROBANTE_FORMA_DE_PAGO.getValor());
         comprobante.setNoCertificado("No Certificado");
@@ -71,10 +64,10 @@ public class ImplNominaMapperTest implements NominaMapper {
             nomina.setIdComprobante(Id);
             nomina.setIdNomina(Id);
             nomina.setVersion(Eutil.NOMINA_VERSION.getValor());
-            nomina.setTipoNomina(ORDINARIA);
-            nomina.setFechaPago(sdf.format(new Date()));
-            nomina.setFechaInicialPago(sdf.format(fecha.getTime()));
-            nomina.setFechaFinalPago(sdf.format(fechaf.getTime()));
+            nomina.setTipoNomina(CTipoNomina.O.name());
+            nomina.setFechaPago(new Date());
+            nomina.setFechaInicialPago(fecha.getTime());
+            nomina.setFechaFinalPago(fechaf.getTime());
             nomina.setNumDiasPagados(3.141);
             nomina.setTotalPercepciones(new BigDecimal("100.00"));
             nomina.setTotalDeducciones(new BigDecimal("1"));
@@ -135,8 +128,8 @@ public class ImplNominaMapperTest implements NominaMapper {
     }
 
     public ReceptorDb getReceptorPorIdComprobanteNomina(BigInteger idComprobante) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Calendar fecha = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
             fecha.setTime(sdf.parse("2012-08-30"));
         } catch (ParseException e) {
@@ -149,7 +142,7 @@ public class ImplNominaMapperTest implements NominaMapper {
         receptor.setNombre(null);
         receptor.setCurp("MASM020203MDFRNTA6");
         receptor.setNumSeguridadSocial("12345678");
-        receptor.setFechaInicioRelacionLaboral(sdf.format(fecha.getTime()));
+        receptor.setFechaInicioRelacionLaboral(fecha.getTime());
         receptor.setAntiguedad("P228W");
         receptor.setTipoContrato("01");
         receptor.setSindicalizado("Sí");
@@ -158,7 +151,7 @@ public class ImplNominaMapperTest implements NominaMapper {
         receptor.setNumEmpleado("100");
         receptor.setDepartamento("CEII");
         receptor.setPuesto("DOCENTE");
-        receptor.setRiesgoPuesto(String.valueOf(CRiesgoPuesto.INT_X_1));
+        receptor.setRiesgoPuesto(String.valueOf(1));
         receptor.setPeriodicidadPago("04");
         receptor.setBanco("014");
         receptor.setCuentaBancaria("4524347700");

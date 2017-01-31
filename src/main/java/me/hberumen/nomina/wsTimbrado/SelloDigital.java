@@ -27,19 +27,12 @@ public class SelloDigital {
         this.xml = xml;
     }
 
-    public String getSelloDigital(){
+    public String getSelloDigital() throws TransformerException, IOException, GeneralSecurityException {
 
-        try {
-            String cadenaOriginal = generarCadenaOriginal();
-            PrivateKey llavePrivada = getPrivateKey();
-            String selloDigital = generarSelloDigital(llavePrivada,cadenaOriginal);
-            return selloDigital;
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-
-        return new String();
-
+        String cadenaOriginal = generarCadenaOriginal();
+        PrivateKey llavePrivada = getPrivateKey();
+        String selloDigital = generarSelloDigital(llavePrivada,cadenaOriginal);
+        return selloDigital;
     }
 
     private String generarCadenaOriginal() throws TransformerException, IOException {

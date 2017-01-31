@@ -3,17 +3,12 @@ package me.hberumen.nomina.modelo;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 
 /**
  * Created by hberumen on 25/11/16.
  */
 @XmlRootElement(name = "Emisor")
 public class Emisor {
-
-    private SimpleDateFormat simpleDateFormat = new SimpleDateFormat("YYYY-mm-dd");
-
 
     private String rfc;
     private String nombre;

@@ -1,8 +1,10 @@
 package me.hberumen.nomina.modelo;
 
-
+import me.hberumen.nomina.adapter.DateIsoAdapter;
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
+import java.util.Date;
 
 
 /**
@@ -17,7 +19,7 @@ public class Comprobante {
     private String version;
     private String serie;
     private String folio;
-    private String fecha;
+    private Date fecha;
     private String sello;
     private String formaDePago;
     private String noCertificado;
@@ -69,11 +71,12 @@ public class Comprobante {
     }
 
     @XmlAttribute(name="fecha")
-    public String getFecha() {
+    @XmlJavaTypeAdapter(DateIsoAdapter.class)
+    public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
 

@@ -1,12 +1,13 @@
 package me.hberumen.nomina.modelo;
 
+import me.hberumen.nomina.adapter.DateAdapter;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -22,9 +23,9 @@ public class Nomina {
 
     private String version;
     private String tipoNomina;
-    private String fechaPago;
-    private String fechaInicialPago;
-    private String fechaFinalPago;
+    private Date fechaPago;
+    private Date fechaInicialPago;
+    private Date fechaFinalPago;
     private Double numDiasPagados;
     private BigDecimal totalPercepciones;
     private BigDecimal totalDeducciones;
@@ -67,29 +68,32 @@ public class Nomina {
     }
 
     @XmlAttribute(name = "FechaPago")
-    public String getFechaPago() {
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    public Date getFechaPago() {
         return fechaPago;
     }
 
-    public void setFechaPago(String fechaPago) {
+    public void setFechaPago(Date fechaPago) {
         this.fechaPago = fechaPago;
     }
 
     @XmlAttribute(name = "FechaInicialPago")
-    public String getFechaInicialPago() {
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    public Date getFechaInicialPago() {
         return fechaInicialPago;
     }
 
-    public void setFechaInicialPago(String fechaInicialPago) {
+    public void setFechaInicialPago(Date fechaInicialPago) {
         this.fechaInicialPago = fechaInicialPago;
     }
 
     @XmlAttribute(name = "FechaFinalPago")
-    public String getFechaFinalPago() {
+    @XmlJavaTypeAdapter(DateAdapter.class)
+    public Date getFechaFinalPago() {
         return fechaFinalPago;
     }
 
-    public void setFechaFinalPago(String fechaFinalPago) {
+    public void setFechaFinalPago(Date fechaFinalPago) {
         this.fechaFinalPago = fechaFinalPago;
     }
 

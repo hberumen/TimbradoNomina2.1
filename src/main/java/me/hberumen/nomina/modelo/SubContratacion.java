@@ -2,7 +2,6 @@ package me.hberumen.nomina.modelo;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.math.BigInteger;
 
 /**
  * Created by hberumen on 30/11/16.

@@ -43,16 +43,14 @@ public class Generador {
 
     }
 
-    private void setComplementoNomina() {
+    private void setComplementoNomina(){
         nominaDb = new NominaDb();
         nominaDb.setIdComprobante(comprobante.getIdComprobante());
         nomina = nominaMapper.getNominaFromIdComprobante(comprobante.getIdComprobante());
         complemento.setNomina(nomina);
 
-        Emisor emisorM = nominaMapper.getEmisorActivoNomina();
-        nomina.setEmisor(emisorM);
-        Receptor receptorM = nominaMapper.getReceptorPorIdComprobanteNomina(comprobante.getIdComprobante());
-        nomina.setReceptor(receptorM);
+        Emisor emisorM = getEmisorNomina();
+        Receptor receptorM = getReceptorNomina();
 
         setEntidadSNFCNomina(emisorM);
         setSubContratacionNomina();
@@ -62,6 +60,18 @@ public class Generador {
         setJubilacionPensionRetiroNomina();
         setSeparacionIndemnizacionNomina();
         setDeduccionesNomina();
+    }
+
+    private Receptor getReceptorNomina(){
+        Receptor receptorM = nominaMapper.getReceptorPorIdComprobanteNomina(comprobante.getIdComprobante());
+        nomina.setReceptor(receptorM);
+        return receptorM;
+    }
+
+    private Emisor getEmisorNomina() {
+        Emisor emisorM = nominaMapper.getEmisorActivoNomina();
+        nomina.setEmisor(emisorM);
+        return emisorM;
     }
 
     private void setDeduccionesNomina() {
