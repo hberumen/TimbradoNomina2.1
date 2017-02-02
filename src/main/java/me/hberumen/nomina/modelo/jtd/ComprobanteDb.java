@@ -10,6 +10,7 @@ import java.math.BigInteger;
 public class ComprobanteDb extends Comprobante {
 
     private BigInteger idComprobante;
+    private BigInteger agrupa;
 
     public ComprobanteDb() {
     }
@@ -20,5 +21,13 @@ public class ComprobanteDb extends Comprobante {
 
     public void setIdComprobante(BigInteger idComprobante) {
         this.idComprobante = idComprobante;
+    }
+
+    public BigInteger getAgrupa() {
+        return agrupa;
+    }
+
+    public void setAgrupa(BigInteger agrupa) {
+        this.agrupa = agrupa;
     }
 }

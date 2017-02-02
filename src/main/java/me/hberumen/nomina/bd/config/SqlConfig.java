@@ -11,7 +11,7 @@ public class SqlConfig {
 
 	static {
 		try {
-			String resource = "me/hberumen/nomina/bd/config/SqlMapConfig.xml";
+			String resource = "config/SqlMapConfig.xml";
 			Reader reader = Resources.getResourceAsReader(resource);
 			sqlMapper = new SqlSessionFactoryBuilder().build(reader);
 		} catch (Exception ex) {

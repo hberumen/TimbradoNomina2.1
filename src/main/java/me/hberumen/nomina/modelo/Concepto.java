@@ -1,5 +1,7 @@
 package me.hberumen.nomina.modelo;
 
+import me.hberumen.nomina.util.Eutil;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
@@ -65,5 +67,16 @@ public class Concepto {
         this.importe = importe;
     }
 
+
+    public static Concepto builder(){
+        Concepto concepto = new Concepto();
+        concepto.setCantidad(1);
+        concepto.setUnidad(Eutil.CONCEPTO_UNIDAD.getValor());
+        concepto.setDescripcion(Eutil.CONCEPTO_DESCRIPCION.getValor());
+        concepto.setValorUnitario(new BigDecimal("100.00"));
+        concepto.setImporte(new BigDecimal("100.00"));
+
+        return concepto;
+    }
 
 }

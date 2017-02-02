@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="localCacheScope" value="STATEMENT"/>
+	</settings> 
+	<typeAliases>
+
+
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.ComprobanteDb" alias="ComprobanteDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.AccionesOTitulosDb" alias="AccionesOTitulosDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.CompensacionSaldosAFavorDb" alias="CompensacionSaldosAFavorDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.DeduccionDb" alias="DeduccionDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.DeduccionesDb" alias="DeduccionesDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.EmisorDb" alias="EmisorDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.EntidadSNFCDb" alias="EntidadSNFCDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.HorasExtraDb" alias="HorasExtraDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.IncapacidadDb" alias="IncapacidadDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.JubilacionPensionRetiroDb" alias="JubilacionPensionRetiroDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.NominaDb" alias="NominaDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.OtroPagoDb" alias="OtroPagoDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.PercepcionDb" alias="PercepcionDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.PercepcionesDb" alias="PercepcionesDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.ReceptorDb" alias="ReceptorDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.RegimenFiscal" alias="RegimenFiscal" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.SeparacionIndemnizacionDb" alias="SeparacionIndemnizacionDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.SubContratacionDb" alias="SubContratacionDb" />
+		<typeAlias type="me.hberumen.nomina.modelo.jtd.SubsidioAlEmpleoDb" alias="SubsidioAlEmpleoDb" />
+		
+	</typeAliases>
+	<environments default="PRODUCCION">
+		<environment id="PRODUCCION">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/nomina" />
+				<property name="username" value="root" />
+				<property name="password" value="" />
+				<property name="poolMaximumActiveConnections" value="1000" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="config/NominaMapper.xml" />
+	</mappers>
+</configuration>

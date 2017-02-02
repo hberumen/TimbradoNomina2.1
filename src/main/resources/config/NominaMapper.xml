@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="me.hberumen.nomina.bd.mappers.NominaMapper">
+	
+    <select id="seleccionarComprobantePorAgrupa" parameterType="BigInteger" resultType="ComprobanteDb">
+        SELECT
+          version, serie, folio, fecha, sello, formaDePago, noCertificado, certificado,
+          subTotal, descuento, tipoCambio, moneda, total, tipoDeComprobante, metodoDePago,
+          lugarExpedicion, agrupa, idComprobante
+        from
+          nomina_comprobante
+        where
+          agrupa = #{agrupa}
+    </select>
+
+    <select id="getNominaFromIdComprobante" parameterType="BigInteger" resultType="NominaDb">
+
+        SELECT
+          idNomina, idComprobante, version, tipoNomina, fechaPago, fechaInicialPago, fechaFinalPago,
+          numDiasPagados, totalPercepciones, totalDeducciones, totalOtrosPagos
+        FROM
+          nomina_nomina
+        WHERE
+          idComprobante = #{idComprobante}
+    </select>
+
+    <select id="getEmisorActivo" resultType="EmisorDb">
+        SELECT
+          idEmisor, rfc, nombre
+        from
+          nomina_emisor
+        WHERE
+          activo = 1
+    </select>
+
+    <select id="getEmisorActivoNomina" resultType="EmisorDb">
+        SELECT
+        idEmisor, rfc, nombre, registroPatronal, rfcPatronOrigen, regimenFiscal
+        from
+        nomina_emisor
+        WHERE
+        activo = 1
+    </select>
+
+    <select id="getRegimenFiscalPorIdEmisor" parameterType="Integer" resultType="RegimenFiscal">
+        SELECT
+        regimenFiscal
+        from
+        nomina_emisor
+        WHERE
+        idEmisor = #{idEmisor}
+    </select>
+
+    <select id="getReceptorPorIdComprobante" parameterType="BigInteger" resultType="ReceptorDb">
+        SELECT
+          idReceptor, idComprobante, rfc, nombre
+        FROM
+          nomina_receptor
+        WHERE
+          idComprobante = #{idComprobante}
+    </select>
+
+    <select id="getReceptorPorIdComprobanteNomina" parameterType="BigInteger" resultType="ReceptorDb">
+        SELECT
+        idReceptor, idComprobante, rfc, nombre, curp, numSeguridadSocial, fechaInicioRelacionLaboral,
+        antiguedad, tipoContrato, sindicalizado, tipoJornada, tipoRegimen, numEmpleado, departamento,
+        puesto, riesgoPuesto, periodicidadPago, banco, cuentaBancaria, salarioBaseCotApor,
+        salarioDiarioIntegrado, claveEntFed
+        FROM
+        nomina_receptor
+        WHERE
+        idComprobante = #{idComprobante}
+    </select>
+
+    <select id="seleccionarEntidadSNFCPorIdNomina" parameterType="BigInteger" resultType="EntidadSNFCDb">
+      SELECT
+        idEntidadSnfc, idNomina, origenRecurso, montoRecursoPropio
+      FROM
+        nomina_entidadsnfc
+      WHERE
+        idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarSubContratacionPorIdNomina" parameterType="BigInteger" resultType="SubContratacionDb">
+        SELECT
+          idSubcontratacion, idReceptor, rfcLabora, porcentajeTiempo
+        FROM
+          nomina_subcontratacion
+        WHERE
+          idReceptor = #{idReceptor}
+    </select>
+
+    <select id="seleccionarPercepcionesPorIdNomina" parameterType="BigInteger" resultType="PercepcionesDb">
+        SELECT
+          idPercepciones, idNomina, totalSueldos, totalSeparacionIndemnizacion, totalJubilacionPensionRetiro,
+          totalGravado, totalExento
+        FROM
+          nomina_percepciones
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarPercepcionPorIdPercepciones" parameterType="BigInteger" resultType="PercepcionDb">
+        SELECT
+          idPercepcion, idPercepciones, tipoPercepcion, clave, concepto, importeGravado, importeExento
+        FROM
+          nomina_percepcion
+        WHERE
+          idPercepciones = #{idPercepciones}
+    </select>
+
+    <select id="selecionarAccionesOTitulosPorIdNomina" parameterType="BigInteger" resultType="AccionesOTitulosDb">
+        SELECT
+          idAccionesotitulos, idNomina, valorMercado, precioAlOtorgarse
+        FROM
+          nomina_accionesotitulos
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarHorasExtraPorIdNomina" parameterType="BigInteger" resultType="HorasExtraDb">
+        SELECT
+          idHorasExtra, idNomina, dias, tipoHoras, horasExtra, importePagado
+        FROM
+          nomina_horasextra
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarJubilacionPensionRetiroPorIdNomina" parameterType="BigInteger" resultType="JubilacionPensionRetiroDb">
+        SELECT
+          idJubilacion, idNomina, totalUnaExhibicion, totalParcialidad, montoDiario,
+          ingresoAcumulable, ingresoNoAcumulable
+        FROM
+          nomina_jubilacionpensionretiro
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarSeparacionIndemnizacionPorIdNomina" parameterType="BigInteger" resultType="SeparacionIndemnizacionDb">
+        SELECT
+          idSeparacion, idNomina, totalPagado, numAnosServicio, ultimoSueldoMensOrd,
+          ingresoAcumulable, ingresoNoAcumulable
+        FROM
+          nomina_separacionindemnizacion
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarDeduccionesPorIdNomina" parameterType="BigInteger" resultType="DeduccionesDb">
+        SELECT
+          idDeducciones, idNomina, totalOtrasDeducciones, totalImpuestosRetenidos
+        FROM
+          nomina_deducciones
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarDeduccionPorIdDeducciones" parameterType="BigInteger" resultType="DeduccionDb">
+        SELECT
+          idDeduccion, idDeducciones, tipoDeduccion, clave, concepto, importe
+        FROM
+          nomina_deduccion
+        WHERE
+          idDeducciones = #{idDeducciones}
+    </select>
+
+    <select id="seleccionarIncapacidadPorIdNomina" parameterType="BigInteger" resultType="IncapacidadDb">
+        SELECT
+          idIncapacidad, idNomina, diasIncapacidad, tipoIncapacidad, importeMonetario
+        FROM
+          nomina_incapacidad
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarOtroPagoPorIdNomina" parameterType="BigInteger" resultType="OtroPagoDb">
+        SELECT
+          idOtroPago, idNomina, tipoOtroPago, clave, concepto, importe
+        FROM
+          nomina_otropago
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarSubsidioPorIdNomina" parameterType="BigInteger" resultType="SubsidioAlEmpleoDb">
+        SELECT
+          idSubsidio, idNomina, subsidioCausado
+        FROM
+          nomina_subsidioalempleo
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+
+    <select id="seleccionarCompensacionPorIdNomina" parameterType="BigInteger" resultType="CompensacionSaldosAFavorDb">
+        SELECT
+          idCompensacion, idNomina, saldoAFavor, ano, remanenteSalFav
+        FROM
+          nomina_compensacionsaldosafavor
+        WHERE
+          idNomina = #{idNomina}
+    </select>
+	
+</mapper>

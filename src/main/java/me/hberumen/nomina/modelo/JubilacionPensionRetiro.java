@@ -14,7 +14,7 @@ public class JubilacionPensionRetiro {
     private BigDecimal totalParcialidad;
     private BigDecimal montoDiario;
     private BigDecimal ingresoAcumulable;
-    private BigDecimal ingresoNoAcomulable;
+    private BigDecimal ingresoNoAcumulable;
 
     public JubilacionPensionRetiro() {
     }
@@ -55,13 +55,13 @@ public class JubilacionPensionRetiro {
         this.ingresoAcumulable = ingresoAcumulable;
     }
 
-    @XmlAttribute(name = "IngresoNoAcomulable")
-    public BigDecimal getIngresoNoAcomulable() {
-        return ingresoNoAcomulable;
+    @XmlAttribute(name = "IngresoNoAcumulable")
+    public BigDecimal getIngresoNoAcumulable() {
+        return ingresoNoAcumulable;
     }
 
-    public void setIngresoNoAcomulable(BigDecimal ingresoNoAcomulable) {
-        this.ingresoNoAcomulable = ingresoNoAcomulable;
+    public void setIngresoNoAcumulable(BigDecimal ingresoNoAcomulable) {
+        this.ingresoNoAcumulable = ingresoNoAcomulable;
     }
 
 

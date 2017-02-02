@@ -45,12 +45,13 @@ public class Generador {
 
     private void setComplementoNomina(){
         nominaDb = new NominaDb();
-        nominaDb.setIdComprobante(comprobante.getIdComprobante());
-        nomina = nominaMapper.getNominaFromIdComprobante(comprobante.getIdComprobante());
+
+        nominaDb = nominaMapper.getNominaFromIdComprobante(comprobante.getIdComprobante());
+        nomina = nominaDb;
         complemento.setNomina(nomina);
 
         Emisor emisorM = getEmisorNomina();
-        Receptor receptorM = getReceptorNomina();
+        getReceptorNomina();
 
         setEntidadSNFCNomina(emisorM);
         setSubContratacionNomina();
@@ -109,6 +110,7 @@ public class Generador {
     }
 
     private void setPercepcionesNomina() {
+
         PercepcionesDb percepciones = nominaMapper.seleccionarPercepcionesPorIdNomina(nominaDb.getIdNomina());
         Percepciones percepcionesM = percepciones;
         nomina.setPercepciones(percepcionesM);
@@ -150,7 +152,7 @@ public class Generador {
         Conceptos conceptos = new Conceptos();
         comprobante.setConceptos(conceptos);
 
-        Concepto concepto = nominaMapper.seleccionarConceptosPorIdComprobante(comprobante.getIdComprobante());
+        Concepto concepto = nominaMapper.seleccionarConceptosPorIdComprobante();
         conceptos.setConcepto(concepto);
     }
 

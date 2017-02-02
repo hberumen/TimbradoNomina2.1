@@ -12,94 +12,71 @@ import java.util.List;
  */
 public class ImplNominaMapper implements NominaMapper {
 
-    public Nomina getNominaFromIdComprobante() {
+
+    public List<ComprobanteDb> seleccionarComprobantePorAgrupa(BigInteger agrupa) {
         return null;
     }
-
-    public List<ComprobanteDb> seleccionarComprobantePorAgrupa(String agrupa) {
-        return null;
-    }
-
     public NominaDb getNominaFromIdComprobante(BigInteger idComprobante) {
         return null;
     }
-
     public EmisorDb getEmisorActivo() {
         return null;
     }
     public EmisorDb getEmisorActivoNomina() {
         return null;
     }
-
-    public RegimenFiscalDb getRegimenFiscalPorIdEmisor(int idEmisor) {
+    public RegimenFiscal getRegimenFiscalPorIdEmisor(int idEmisor) {
         return null;
     }
-
     public ReceptorDb getReceptorPorIdComprobante(BigInteger idComprobante) {
         return null;
     }
-
     public ReceptorDb getReceptorPorIdComprobanteNomina(BigInteger idComprobante) {
         return null;
     }
-
-    public ConceptoDb seleccionarConceptosPorIdComprobante(BigInteger idComprobante) {
+    public Concepto seleccionarConceptosPorIdComprobante() {
         return null;
     }
-
     public EntidadSNFCDb seleccionarEntidadSNFCPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
-    public SubContratacion seleccionarSubContratacionPorIdNomina(BigInteger idNomina) {
+    public SubContratacionDb seleccionarSubContratacionPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
     public PercepcionesDb seleccionarPercepcionesPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
     public List<PercepcionDb> seleccionarPercepcionPorIdPercepciones(BigInteger idPercepcion) {
         return null;
     }
-
-    public AccionesOTitulos selecionarAccionesOTitulosPorIdNomina(BigInteger idNomina) {
+    public AccionesOTitulosDb selecionarAccionesOTitulosPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
-    public HorasExtra seleccionarHorasExtraPorIdNomina(BigInteger idNomina) {
+    public HorasExtraDb seleccionarHorasExtraPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
-    public JubilacionPensionRetiro seleccionarJubilacionPensionRetiroPorIdNomina(BigInteger idNomina) {
+    public JubilacionPensionRetiroDb seleccionarJubilacionPensionRetiroPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
-    public SeparacionIndemnizacion seleccionarSeparacionIndemnizacionPorIdNomina(BigInteger idNomina) {
+    public SeparacionIndemnizacionDb seleccionarSeparacionIndemnizacionPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
     public DeduccionesDb seleccionarDeduccionesPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
     public List<DeduccionDb> seleccionarDeduccionPorIdDeducciones(BigInteger idDeducciones) {
         return null;
     }
-
-    public Incapacidad seleccionarIncapacidadPorIdNomina(BigInteger idNomina) {
+    public IncapacidadDb seleccionarIncapacidadPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
-    public OtroPago seleccionarOtroPagoPorIdNomina(BigInteger idNomina) {
+    public OtroPagoDb seleccionarOtroPagoPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
-    public SubsidioAlEmpleo seleccionarSubsidioPorIdNomina(BigInteger idNomina) {
+    public SubsidioAlEmpleoDb seleccionarSubsidioPorIdNomina(BigInteger idNomina) {
         return null;
     }
-
-    public CompensacionSaldosAFavor seleccionarCompensacionPorIdNomina(BigInteger idNomina) {
+    public CompensacionSaldosAFavorDb seleccionarCompensacionPorIdNomina(BigInteger idNomina) {
         return null;
     }
 }

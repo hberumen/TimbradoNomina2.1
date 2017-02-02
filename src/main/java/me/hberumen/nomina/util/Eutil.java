@@ -13,7 +13,6 @@ public enum Eutil {
     COMPROBANTE_TIPO_COMPROBANTE("egreso"),
     COMPROBANTE_MONEDA("MXN"),
     COMPROBANTE_METODO_DE_PAGO("NA"),
-    EMISOR_REGIMEN_FISCAL("Personas Morales con Fines no Lucrativos"),
     NOMINA_VERSION("1.2");
 
 

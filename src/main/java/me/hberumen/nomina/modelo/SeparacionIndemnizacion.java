@@ -12,7 +12,7 @@ public class SeparacionIndemnizacion {
 
 
     private BigDecimal totalPagado;
-    private Integer numAnosServicios;
+    private Integer numAnosServicio;
     private BigDecimal ultimoSueldoMensOrd;
     private BigDecimal ingresoAcumulable;
     private BigDecimal ingresoNoAcumulable;
@@ -30,12 +30,12 @@ public class SeparacionIndemnizacion {
     }
 
     @XmlAttribute(name = "NumAñosServicio")
-    public Integer getNumAnosServicios() {
-        return numAnosServicios;
+    public Integer getNumAnosServicio() {
+        return numAnosServicio;
     }
 
-    public void setNumAnosServicios(Integer numAnosServicios) {
-        this.numAnosServicios = numAnosServicios;
+    public void setNumAnosServicio(Integer numAnosServicios) {
+        this.numAnosServicio = numAnosServicios;
     }
 
     @XmlAttribute(name = "UltimoSueldoMensOrd")

@@ -10,7 +10,7 @@ import java.math.BigInteger;
 public class OtroPagoDb extends OtroPago {
 
     private BigInteger idOtroPago;
-    private BigInteger idOtrosPagos;
+    private BigInteger idNomina;
 
     public OtroPagoDb() {
     }
@@ -23,11 +23,11 @@ public class OtroPagoDb extends OtroPago {
         this.idOtroPago = idOtroPago;
     }
 
-    public BigInteger getIdOtrosPagos() {
-        return idOtrosPagos;
+    public BigInteger getIdNomina() {
+        return idNomina;
     }
 
-    public void setIdOtrosPagos(BigInteger idOtrosPagos) {
-        this.idOtrosPagos = idOtrosPagos;
+    public void setIdNomina(BigInteger idNomina) {
+        this.idNomina = idNomina;
     }
 }

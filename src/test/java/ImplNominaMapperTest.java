@@ -23,7 +23,7 @@ public class ImplNominaMapperTest implements NominaMapper {
     private BigInteger Id = new BigInteger("1");
     private BigDecimal Dinero = new BigDecimal("100.0");
 
-    public List<ComprobanteDb> seleccionarComprobantePorAgrupa(String agrupa) {
+    public List<ComprobanteDb> seleccionarComprobantePorAgrupa(BigInteger agrupa) {
 
         List<ComprobanteDb> comprobanteList = new ArrayList<ComprobanteDb>();
         ComprobanteDb comprobante = new ComprobanteDb();
@@ -105,12 +105,10 @@ public class ImplNominaMapperTest implements NominaMapper {
         return emisor;
     }
 
-    public RegimenFiscalDb getRegimenFiscalPorIdEmisor(int idEmisor) {
+    public RegimenFiscal getRegimenFiscalPorIdEmisor(int idEmisor) {
 
-        RegimenFiscalDb regimenFiscal = new RegimenFiscalDb();
+        RegimenFiscal regimenFiscal = new RegimenFiscal();
         regimenFiscal.setRegimen("603");
-        regimenFiscal.setIdEmisor(1);
-        regimenFiscal.setIdRegimenFiscal(1);
 
         return regimenFiscal;
     }
@@ -162,19 +160,11 @@ public class ImplNominaMapperTest implements NominaMapper {
         return receptor;
     }
 
-    public ConceptoDb seleccionarConceptosPorIdComprobante(BigInteger idComprobante) {
+    public Concepto seleccionarConceptosPorIdComprobante() {
 
-        ConceptoDb concepto = new ConceptoDb();
-        concepto.setIdConcepto(Id);
-        concepto.setIdComprobante(Id);
-        concepto.setCantidad(1);
-        concepto.setUnidad(Eutil.CONCEPTO_UNIDAD.getValor());
-        concepto.setDescripcion(Eutil.CONCEPTO_DESCRIPCION.getValor());
-        concepto.setValorUnitario(new BigDecimal("100.00"));
-        concepto.setImporte(new BigDecimal("100.00"));
-
-        return concepto;
+        return Concepto.builder();
     }
+
 
     public EntidadSNFCDb seleccionarEntidadSNFCPorIdNomina(BigInteger idNomina) {
 
@@ -187,8 +177,7 @@ public class ImplNominaMapperTest implements NominaMapper {
         return entidadSNFC;
     }
 
-    public SubContratacion seleccionarSubContratacionPorIdNomina(BigInteger idNomina) {
-
+    public SubContratacionDb seleccionarSubContratacionPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
@@ -238,19 +227,19 @@ public class ImplNominaMapperTest implements NominaMapper {
         return  percepcionList;
     }
 
-    public AccionesOTitulos selecionarAccionesOTitulosPorIdNomina(BigInteger idNomina) {
+    public AccionesOTitulosDb selecionarAccionesOTitulosPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
-    public HorasExtra seleccionarHorasExtraPorIdNomina(BigInteger idNomina) {
+    public HorasExtraDb seleccionarHorasExtraPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
-    public JubilacionPensionRetiro seleccionarJubilacionPensionRetiroPorIdNomina(BigInteger idNomina) {
+    public JubilacionPensionRetiroDb seleccionarJubilacionPensionRetiroPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
-    public SeparacionIndemnizacion seleccionarSeparacionIndemnizacionPorIdNomina(BigInteger idNomina) {
+    public SeparacionIndemnizacionDb seleccionarSeparacionIndemnizacionPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
@@ -283,19 +272,19 @@ public class ImplNominaMapperTest implements NominaMapper {
         return deduccionList;
     }
 
-    public Incapacidad seleccionarIncapacidadPorIdNomina(BigInteger idNomina) {
+    public IncapacidadDb seleccionarIncapacidadPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
-    public OtroPago seleccionarOtroPagoPorIdNomina(BigInteger idNomina) {
+    public OtroPagoDb seleccionarOtroPagoPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
-    public SubsidioAlEmpleo seleccionarSubsidioPorIdNomina(BigInteger idNomina) {
+    public SubsidioAlEmpleoDb seleccionarSubsidioPorIdNomina(BigInteger idNomina) {
         return null;
     }
 
-    public CompensacionSaldosAFavor seleccionarCompensacionPorIdNomina(BigInteger idNomina) {
+    public CompensacionSaldosAFavorDb seleccionarCompensacionPorIdNomina(BigInteger idNomina) {
         return null;
     }
 }

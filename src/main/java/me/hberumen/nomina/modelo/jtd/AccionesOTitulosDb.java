@@ -1,13 +1,15 @@
 package me.hberumen.nomina.modelo.jtd;
 
+import me.hberumen.nomina.modelo.AccionesOTitulos;
+
 import java.math.BigInteger;
 
 /**
  * Created by hberumen on 23/01/17.
  */
-public class AccionesOTitulosDb {
+public class AccionesOTitulosDb  extends AccionesOTitulos{
 
-    private BigInteger idAcciones;
+    private BigInteger idAccionesotitulos;
     private BigInteger idNomina;
 
     public AccionesOTitulosDb() {
@@ -21,11 +23,12 @@ public class AccionesOTitulosDb {
         this.idNomina = idNomina;
     }
 
-    public BigInteger getIdAcciones() {
-        return idAcciones;
+
+    public BigInteger getIdAccionesotitulos() {
+        return idAccionesotitulos;
     }
 
-    public void setIdAcciones(BigInteger idAcciones) {
-        this.idAcciones = idAcciones;
+    public void setIdAccionesotitulos(BigInteger idAccionesotitulos) {
+        this.idAccionesotitulos = idAccionesotitulos;
     }
 }
